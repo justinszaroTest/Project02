@@ -3,7 +3,8 @@ package Project02;
 public enum PeopleType
 {
     wizard  ("wizard"),
-    warrior ("warrior");
+    warrior ("warrior"),
+    cleric ("Healer");
 
     private String description;
 
