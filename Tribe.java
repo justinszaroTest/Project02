@@ -32,7 +32,6 @@ public class Tribe
             {
                 livingMembers.add(members.get(person));
                 tribeLifePoints += members.get(person).getLifePoints();
-                //System.out.println(members.get(person));
             }
             else
             {
@@ -43,19 +42,8 @@ public class Tribe
                 }
             }
         }
-        //System.out.println(livingMembers);
         return livingMembers;
     }
-    /*
-    public void printMembers()
-    {
-        for(int i = 0; i < 2; i++)
-        {
-            System.out.println(people.get(i));
-        }
-    }
-*/
-
 
     public int getTribeSize()
     {
@@ -66,7 +54,6 @@ public class Tribe
     {
         return (tribeLifePoints > 0);
     }
-
 
     public int getTribeLifePoints()
     {
@@ -80,15 +67,9 @@ public class Tribe
 
     public String toString()
     {
-        String result = "\0";
-
-        result = tribeName;
-        for(int i = 0; i < members.size(); i++)
-        {
-            result = result + '\n' + members.get(i).toString();
-        }
-        result = result + '\n';
-        return result;
+        StringBuilder result = new StringBuilder(tribeName);
+        for (People member : members)
+            result.append('\n').append(member.toString());
+        return result.append('\n').toString();
     }
-
 }

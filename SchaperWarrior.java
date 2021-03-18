@@ -7,7 +7,6 @@ public class SchaperWarrior extends People
         myDescription = "\tSchaper Warrior";
     }
 
-
     public int encounterStrategy(People otherPerson)
     {
         int lifePoints = 0;
@@ -40,5 +39,4 @@ public class SchaperWarrior extends People
         }
         return lifePoints;
     }
-
 }

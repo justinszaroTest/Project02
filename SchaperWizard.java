@@ -36,5 +36,4 @@ public class SchaperWizard extends People
         }
         return lifePoints;
     }
-
 }

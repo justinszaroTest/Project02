@@ -9,7 +9,6 @@ public abstract class People
     private int myLifePoints;
     private boolean dead;
 
-
     public People(String nation, String tribe, PeopleType person, int lifePoints)
     {
         myNation = nation;
@@ -60,15 +59,10 @@ public abstract class People
         myLifePoints += points;
     }
 
-
     public abstract int encounterStrategy(People otherPerson);
-
-
 
     public String toString()
     {
-        String result = new String( myNation + "\t" +  myTribe + "\t" + me + "\t" + myDescription + "\t" + myLifePoints);
-        return result;
+        return myNation + "\t" +  myTribe + "\t" + me + "\t" + myDescription + "\t" + myLifePoints;
     }
 }
-

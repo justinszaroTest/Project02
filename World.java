@@ -7,15 +7,11 @@ public class World
     private ArrayList<Nation> allNations = new ArrayList<>();
     private ArrayList<Nation> allLivingNations = new ArrayList<>();
 
-
     Random generator;
     ArrayList<People> worldCreatedPeople = new ArrayList<>();
 
-
-
     public World()
     {
-        // seed for psuedo-random number generator
         Date seed = new Date();
         generator = new Random(seed.getTime());
         createWorld();
@@ -23,42 +19,38 @@ public class World
     }
 
     public void war()
-        {
-            ArrayList<Integer> worldSurvivingPeople = new ArrayList<>();
+    {
+        ArrayList<Integer> worldSurvivingPeople = new ArrayList<>();
 
-            for(int round = 1; round < numberOfRounds; round++)
+        for(int round = 1; round < numberOfRounds; round++)
+        {
+            Set<String> survivingNations = new HashSet<>();
+            System.out.println("Round number: " + round);
+            worldSurvivingPeople.clear();
+            worldSurvivingPeople.addAll(getWorldSurvivingPeople());
+            survivingNations.addAll(getSurvivingNations());
+            if ((worldSurvivingPeople.size() >= 2) && (survivingNations.size() > 1) )
+                playOneRound(worldSurvivingPeople);
+            else
             {
-                Set<String> survivingNations = new HashSet<>();
-                System.out.println("Round number: " + round);
-                worldSurvivingPeople.clear();
-                worldSurvivingPeople.addAll(getWorldSurvivingPeople());
-                survivingNations.addAll(getSurvivingNations());
-                if ((worldSurvivingPeople.size() >= 2) && (survivingNations.size() > 1) )
-                    playOneRound(worldSurvivingPeople);
+                System.out.print("Game is over! Winning Nation is: ");
+                if (survivingNations.size() == 0)
+                {
+                    System.out.println("All Nations Distroyed.");
+                }
                 else
                 {
-                    System.out.print("Game is over! Winning Nation is: ");
-                    if (survivingNations.size() == 0)
+                    System.out.println(survivingNations);
+                    System.out.println("The survivors are:");
+                    for (Integer i = 0; i < worldSurvivingPeople.size(); i++)
                     {
-                        System.out.println("All Nations Distroyed.");
+                        System.out.println(worldCreatedPeople.get(worldSurvivingPeople.get(i)));
                     }
-                    else
-                    {
-                        System.out.println(survivingNations);
-                        System.out.println("The survivors are:");
-                        for (Integer i = 0; i < worldSurvivingPeople.size(); i++)
-                        {
-                            System.out.println(worldCreatedPeople.get(worldSurvivingPeople.get(i)));
-                        }
-                    }
-                    break;
                 }
-
+                break;
             }
-
+        }
     }
-
-
 
     public void createWorld()
     {
@@ -66,17 +58,13 @@ public class World
         allNations.add(new Nation("Minions", (worldLifePoints) / 2));
     }
 
-
     public ArrayList<People> getWorldCreatedPopulation()
     {
         ArrayList<People> livingPeople = new ArrayList<>();
-        // add all living people from allNations to livingPeople
         for(int nation = 0; nation < allNations.size(); nation++)
             livingPeople.addAll(allNations.get(nation).getNationPopulation());
-        //System.out.println(livingPeople);
         return livingPeople;
     }
-
 
     public ArrayList<Integer> getWorldSurvivingPeople()
     {
@@ -90,8 +78,7 @@ public class World
         }
         return survivors;
     }
-
-
+    
     public Set<String> getSurvivingNations()
     {
         Set<String> survivingNations = new HashSet<>();
@@ -105,7 +92,6 @@ public class World
         }
         return survivingNations;
     }
-
 
     public void encounter(Integer person1, Integer person2)
     {
@@ -148,9 +134,7 @@ public class World
         // Both people lose 1 life point per encounter due to aging
         worldCreatedPeople.get(person1).modifyLifePoints((-1));
         worldCreatedPeople.get(person2).modifyLifePoints((-1));
-
     }
-
 
     public void playOneRound(ArrayList<Integer> combatants)
     {
@@ -166,7 +150,4 @@ public class World
             combatantIndex = combatantIndex + 2;
         }
     }
-
-
-
 }

@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 
 public class Nation
@@ -8,7 +7,6 @@ public class Nation
     private ArrayList<Tribe> tribes = new ArrayList<>();
     private ArrayList<People> population = new ArrayList<>();
     private ArrayList<People> livingPopulation = new ArrayList<>();
-
 
     public Nation(String name, int lifePoints)
     {
@@ -22,7 +20,6 @@ public class Nation
         livingPopulation.addAll(population);
     }
 
-
     public ArrayList<People> getNationPopulation()
     {
         nationLifePoints = 0;
@@ -31,21 +28,17 @@ public class Nation
         {
             if(tribes.get(tribe).isTribeAlive())
             {
-                //System.out.println(tribes.get(tribe));
                 livingPopulation.addAll(tribes.get(tribe).getLivingTribeMembers());
-                //System.out.println(tribes.get(tribe).getLivingTribeMembers());
                 nationLifePoints += tribes.get(tribe).getTribeLifePoints();
             }
         }
         return livingPopulation;
     }
 
-
     public String getNationName()
     {
         return nationName;
     }
-
 
     public void printTribesStatus()
     {
@@ -65,14 +58,9 @@ public class Nation
 
     public String toString()
     {
-        String result = "\0";
-        result = nationName;
-        for(int i = 0; i < tribes.size(); i++)
-        {
-            result = result + '\n' + tribes.get(i).toString();
-
-        }
-        result = result + '\n';
-        return result;
+        StringBuilder result = new StringBuilder(nationName);
+        for (Tribe tribe : tribes)
+            result.append('\n').append(tribe.toString());
+        return result.append('\n').toString();
     }
 }
