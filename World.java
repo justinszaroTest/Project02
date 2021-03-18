@@ -1,7 +1,3 @@
-package Project02;
-
-import Project02.Nation;
-import Project02.People;
 import java.util.*;
 
 public class World

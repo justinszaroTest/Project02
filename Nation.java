@@ -1,10 +1,5 @@
-package Project02;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.ArrayList;
-import Project02.Tribe;
-import Project02.People;
 
 public class Nation
 {

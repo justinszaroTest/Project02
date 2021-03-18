@@ -1,12 +1,4 @@
-package Project02;
-import java.util.Collection;
-import java.util.Collections;
-import java.io.StringBufferInputStream;
 import java.util.ArrayList;
-import Project02.People;
-import Project02.PeopleType;
-import Project02.SchaperWarrior;
-import Project02.SchaperWizard;
 
 public class Tribe
 {
