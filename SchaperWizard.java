@@ -1,10 +1,5 @@
-package Project02;
 
-import Project02.People;
-import Project02.PeopleType;
-
-
-public class SchaperWizard extends Project02.People
+public class SchaperWizard extends People
 {
     SchaperWizard(String nation, String tribe, int lifePoints)
     {
@@ -12,7 +7,7 @@ public class SchaperWizard extends Project02.People
         myDescription = "\tSchaper Wizard";
     }
 
-    public int encounterStrategy(Project02.People otherPerson) {
+    public int encounterStrategy(People otherPerson) {
         int lifePoints = 0;
         if (this.getNation() != otherPerson.getNation())
         {

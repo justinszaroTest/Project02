@@ -1,4 +1,3 @@
-package Project02;
 
 public enum PeopleType
 {
