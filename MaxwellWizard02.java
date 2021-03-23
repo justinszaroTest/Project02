@@ -1,8 +1,9 @@
 public class MaxwellWizard02 extends People {
 
 
-    public MaxwellWizard02(String nation, String tribe, PeopleType person, int lifePoints) {
-        super(nation, tribe, person, lifePoints);
+    public MaxwellWizard02(String nation, String tribe, int lifePoints) {
+        super(nation, tribe, PeopleType.wizard, lifePoints);
+        String myDescription = "\tMax's Wizard";
     }
 
     @Override
