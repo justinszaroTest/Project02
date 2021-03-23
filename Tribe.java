@@ -13,12 +13,34 @@ public class Tribe
         nationName = nation;
         tribeName = tribe;
         tribeLifePoints = lifePoints;
-        members.add(new JustinWarrior1(nationName, tribeName, tribeLifePoints / 6));
-        members.add(new JustinWizard1(nationName, tribeName, tribeLifePoints / 6));
-        members.add(new JustinHealer1(nationName, tribeName, tribeLifePoints /6));
-        members.add(new JustinWarrior2(nationName, tribeName, tribeLifePoints / 6));
-        members.add(new JustinWizard2(nationName, tribeName, tribeLifePoints / 6));
-        members.add(new JustinHealer2(nationName, tribeName, tribeLifePoints /6));
+        if (nationName.equals("Justin's Nation")) {
+            members.add(new JustinWarrior1(nationName, tribeName, tribeLifePoints / 6));
+            members.add(new JustinWizard1(nationName, tribeName, tribeLifePoints / 6));
+            members.add(new JustinHealer1(nationName, tribeName, tribeLifePoints /6));
+            members.add(new JustinWarrior2(nationName, tribeName, tribeLifePoints / 6));
+            members.add(new JustinWizard2(nationName, tribeName, tribeLifePoints / 6));
+            members.add(new JustinHealer2(nationName, tribeName, tribeLifePoints /6));
+        }
+        else if (nationName.equals("Maxwell's Nation")) {
+//            members.add(new MaxwellHealer01(nationName, tribeName, tribeLifePoints /6));
+//            members.add(new MaxwellHealer02(nationName, tribeName, tribeLifePoints /6));
+//            members.add(new MaxwellWarrior01(nationName, tribeName, tribeLifePoints /6));
+//            members.add(new MaxwellWarrior02(nationName, tribeName, tribeLifePoints /6));
+//            members.add(new MaxwellWizard01(nationName, tribeName, tribeLifePoints /6));
+//            members.add(new MaxwellWizard02(nationName, tribeName, tribeLifePoints /6));
+        }
+        else if (nationName.equals("Tanishq's Nation")) {
+
+        }
+        else if (nationName.equals("Elizabeth's Nation")) {
+
+        }
+
+
+
+
+
+
         for(int i = 0; i < members.size(); i++)
             livingMembers.addAll(members);
     }
