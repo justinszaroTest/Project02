@@ -1,9 +1,9 @@
 
-public class TanishqWizzardA extends People
+public class TanishqWizzard2 extends People
 {
-    TanishqWizzardA(String nation, String tribe, int lifePoints)
+    TanishqWizzard2(String nation, String tribe, int lifePoints)
     {
-        super(nation, tribe, PeopleType.wizard, lifePoints);
+        super(nation, tribe, PeopleType.warrior, lifePoints);
         myDescription = "\tTanishq Wizzard";
     }
 

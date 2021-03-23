@@ -1,10 +1,10 @@
 
-public class TanishqHealerA extends People
+public class TanishqWizzard1 extends People
 {
-    TanishqHealerA(String nation, String tribe, int lifePoints)
+    TanishqWizzard1(String nation, String tribe, int lifePoints)
     {
-        super(nation, tribe, PeopleType.cleric, lifePoints);
-        myDescription = "\tTanishq Healer A";
+        super(nation, tribe, PeopleType.wizard, lifePoints);
+        myDescription = "\tTanishq Wizzard";
     }
 
     public int encounterStrategy(People otherPerson)
