@@ -13,11 +13,12 @@ public class Tribe
         nationName = nation;
         tribeName = tribe;
         tribeLifePoints = lifePoints;
-        for(int i = 0; i < 5; i++)
-            if(i % 2 == 0)
-                members.add(new SchaperWarrior(nationName, tribeName, tribeLifePoints / 5));
-            else
-                members.add(new SchaperWizard(nationName, tribeName, tribeLifePoints / 5));
+        members.add(new JustinWarrior1(nationName, tribeName, tribeLifePoints / 6));
+        members.add(new JustinWizard1(nationName, tribeName, tribeLifePoints / 6));
+        members.add(new JustinHealer1(nationName, tribeName, tribeLifePoints /6));
+        members.add(new JustinWarrior2(nationName, tribeName, tribeLifePoints / 6));
+        members.add(new JustinWizard2(nationName, tribeName, tribeLifePoints / 6));
+        members.add(new JustinHealer2(nationName, tribeName, tribeLifePoints /6));
         for(int i = 0; i < members.size(); i++)
             livingMembers.addAll(members);
     }
