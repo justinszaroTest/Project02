@@ -19,6 +19,15 @@ public class Tribe
         members.add(new JustinWarrior2(nationName, tribeName, tribeLifePoints / 6));
         members.add(new JustinWizard2(nationName, tribeName, tribeLifePoints / 6));
         members.add(new JustinHealer2(nationName, tribeName, tribeLifePoints /6));
+        members.add(new ElizabethWarrior(nationName, tribeName, tribeLifePoints / 6));
+        members.add(new ElizabethWizard(nationName, tribeName, tribeLifePoints / 6));
+        members.add(new ElizabethHealer(nationName, tribeName, tribeLifePoints / 6));
+        members.add(new ElizabethWizardSecond(nationName, tribeName, tribeLifePoints / 6));
+        members.add(new ElizabethHealerSecond(nationName, tribeName, tribeLifePoints / 6));
+        members.add(new ElizabethWarriorSecond(nationName, tribeName, tribeLifePoints / 6));
+
+
+
         for(int i = 0; i < members.size(); i++)
             livingMembers.addAll(members);
     }

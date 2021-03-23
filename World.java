@@ -3,7 +3,7 @@ import java.util.*;
 public class World
 {
     private final int worldLifePoints = 4000;
-    private final int numberOfRounds = 40;
+    private final int numberOfRounds = 4000;
     private ArrayList<Nation> allNations = new ArrayList<>();
     private ArrayList<Nation> allLivingNations = new ArrayList<>();
 
@@ -64,6 +64,8 @@ public class World
     {
         allNations.add(new Nation("Idiots", (worldLifePoints / 2)));
         allNations.add(new Nation("Minions", (worldLifePoints) / 2));
+
+
     }
 
 
