@@ -13,6 +13,7 @@ public class Tribe
         nationName = nation;
         tribeName = tribe;
         tribeLifePoints = lifePoints;
+
         if (nationName.equals("Justin's Nation")) {
             members.add(new JustinWarrior1(nationName, tribeName, tribeLifePoints / 6));
             members.add(new JustinWizard1(nationName, tribeName, tribeLifePoints / 6));
@@ -33,11 +34,14 @@ public class Tribe
 
         }
         else if (nationName.equals("Elizabeth's Nation")) {
-
+            members.add(new ElizabethWarrior(nationName, tribeName, tribeLifePoints / 6));
+            members.add(new ElizabethWizard(nationName, tribeName, tribeLifePoints / 6));
+            members.add(new ElizabethHealer(nationName, tribeName, tribeLifePoints / 6));
+            members.add(new ElizabethWizardSecond(nationName, tribeName, tribeLifePoints / 6));
+            members.add(new ElizabethHealerSecond(nationName, tribeName, tribeLifePoints / 6));
+            members.add(new ElizabethWarriorSecond(nationName, tribeName, tribeLifePoints / 6));
         }
-
-
-
+        
 
 
 
