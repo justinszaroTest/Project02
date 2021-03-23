@@ -14,9 +14,10 @@ public class Nation
     {
         nationName = name;
         nationLifePoints = lifePoints;
-        for(int i = 0; i < 6; i++)
+        for(int i = 0; i < 3; i++)
         {
-            this.tribes.add(new Tribe(nationName, "Tribe" + i, nationLifePoints / 6));
+            this.tribes.add(new Tribe(nationName, "Tribe" + i, nationLifePoints / 3));
+
         }
         population.addAll(getNationPopulation());
         livingPopulation.addAll(population);
