@@ -2,7 +2,7 @@ public class JustinHealer2 extends People
 {
     JustinHealer2(String nation, String tribe, int lifePoints)
     {
-        super(nation, tribe, PeopleType.warrior, lifePoints);
+        super(nation, tribe, PeopleType.cleric, lifePoints);
         myDescription = "\tJustin Healer";
     }
 
