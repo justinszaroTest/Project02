@@ -3,12 +3,32 @@ public class MaxwellWizard02 extends People {
 
     public MaxwellWizard02(String nation, String tribe, int lifePoints) {
         super(nation, tribe, PeopleType.wizard, lifePoints);
-        String myDescription = "\tMax's Wizard";
+        myDescription = "Max's wizard 02";
     }
 
     @Override
     public int encounterStrategy(People otherPerson) {
-        return 0;
+        int numberOfLifePoints = 0;
+        if (this.getNation().equals(otherPerson.getNation())) {
+            if (this.getLifePoints() > otherPerson.getLifePoints()) {
+                numberOfLifePoints = -(otherPerson.getLifePoints() - 20);
+
+            } else {
+                numberOfLifePoints = 0;
+            }
+
+        } else { //different nations
+            if (otherPerson.getType() == PeopleType.cleric) {
+                numberOfLifePoints = (this.getLifePoints()) * 3;
+
+            } else if (otherPerson.getType() == PeopleType.warrior) {
+                numberOfLifePoints = -(this.getLifePoints());
+
+            } else if (otherPerson.getType() == PeopleType.wizard) {
+                numberOfLifePoints = this.getLifePoints() - 40;
+            }
+
+        }
+        return numberOfLifePoints;
     }
 }
-
