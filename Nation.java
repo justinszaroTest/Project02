@@ -9,7 +9,11 @@ public class Nation
     private ArrayList<People> population = new ArrayList<>();
     private ArrayList<People> livingPopulation = new ArrayList<>();
 
-
+    /**
+     * creates new tribe
+     * @param name
+     * @param lifePoints
+     */
     public Nation(String name, int lifePoints)
     {
         nationName = name;

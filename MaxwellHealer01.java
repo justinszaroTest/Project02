@@ -5,7 +5,7 @@ public class MaxwellHealer01 extends People {
     }
 
     public int encounterStrategy(People otherPerson) {
-        return -500;
+        return -0;
     }       //The best healer
 
 }
