@@ -19,13 +19,13 @@ public class MaxwellWizard02 extends People {
 
         } else { //different nations
             if (otherPerson.getType() == PeopleType.cleric) {
-                numberOfLifePoints = (this.getLifePoints()) * 3;
+                numberOfLifePoints = (this.getLifePoints()) * 3; //when attacking cleric i do 3x damage
 
-            } else if (otherPerson.getType() == PeopleType.warrior) {
+            } else if (otherPerson.getType() == PeopleType.warrior) {// i run from the warrior
                 numberOfLifePoints = -(this.getLifePoints());
 
             } else if (otherPerson.getType() == PeopleType.wizard) {
-                numberOfLifePoints = this.getLifePoints() - 40;
+                numberOfLifePoints = this.getLifePoints() - 40; //i heal for 40 points
             }
 
         }
