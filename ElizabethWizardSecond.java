@@ -2,7 +2,7 @@ public class ElizabethWizardSecond extends People {
 
     public ElizabethWizardSecond(String nation, String tribe,  int lifePoints) {
         super(nation, tribe, PeopleType.wizard, lifePoints);
-        myDescription =  "\tELizabeth Wizard Second";
+        myDescription =  "\tElizabeth Wizard Second";
     }
 
     @Override

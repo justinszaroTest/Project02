@@ -35,8 +35,8 @@ public class Tribe
             members.add(new TanishqHealer2(nationName, tribeName, tribeLifePoints /6));
             members.add(new TanishqWarrior1(nationName, tribeName, tribeLifePoints /6));
             members.add(new TanishqWarrior2(nationName, tribeName, tribeLifePoints /6));
-            members.add(new TanishqWizzard1(nationName, tribeName, tribeLifePoints /6));
-            members.add(new TanishqWizzard2(nationName, tribeName, tribeLifePoints /6));
+            members.add(new TanishqWizard1(nationName, tribeName, tribeLifePoints /6));
+            members.add(new TanishqWizard2(nationName, tribeName, tribeLifePoints /6));
         }
         else if (nationName.equals("Elizabeth's Nation")) {
             members.add(new ElizabethWarrior(nationName, tribeName, tribeLifePoints / 6));

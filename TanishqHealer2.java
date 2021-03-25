@@ -11,11 +11,11 @@ public class TanishqHealer2 extends People
     {
         if (!this.getNation().equals(otherPerson.getNation()))
         {
-            return this.getLifePoints();
+            return -3;
         }
         else
         {
-            return -100;
+            return -2;
         }
     }
 }

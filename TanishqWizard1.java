@@ -1,21 +1,21 @@
 
-public class TanishqWizzard1 extends People
+public class TanishqWizard1 extends People
 {
-    TanishqWizzard1(String nation, String tribe, int lifePoints)
+    TanishqWizard1(String nation, String tribe, int lifePoints)
     {
         super(nation, tribe, PeopleType.wizard, lifePoints);
-        myDescription = "\tTanishq Wizzard";
+        myDescription = "\tTanishq Wizard";
     }
 
     public int encounterStrategy(People otherPerson)
     {
         if (!this.getNation().equals(otherPerson.getNation()))
         {
-            return this.getLifePoints();
+            return -2;
         }
         else
         {
-            return -100;
+            return Math.abs(this.getLifePoints() - otherPerson.getLifePoints());
         }
     }
 }
