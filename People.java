@@ -51,13 +51,16 @@ public abstract class People
     }
 
     public int getLifePoints()
-    {
-        return myLifePoints;
-    }
+    { return myLifePoints;}
 
     public void modifyLifePoints(int points)
     {
-        myLifePoints += points;
+       if ((myLifePoints + points ) > 100) {
+           myLifePoints = 100;
+       }
+       else{
+           myLifePoints += points;
+       }
     }
 
 
