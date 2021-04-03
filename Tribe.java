@@ -18,33 +18,21 @@ public class Tribe
             members.add(new JustinWarrior1(nationName, tribeName, tribeLifePoints / 6));
             members.add(new JustinWizard1(nationName, tribeName, tribeLifePoints / 6));
             members.add(new JustinHealer1(nationName, tribeName, tribeLifePoints /6));
-            members.add(new JustinWarrior2(nationName, tribeName, tribeLifePoints / 6));
-            members.add(new JustinWizard2(nationName, tribeName, tribeLifePoints / 6));
-            members.add(new JustinHealer2(nationName, tribeName, tribeLifePoints /6));
         }
         else if (nationName.equals("Maxwell's Nation")) {
             members.add(new MaxwellHealer01(nationName, tribeName, tribeLifePoints /6));
-            members.add(new MaxwellHealer02(nationName, tribeName, tribeLifePoints /6));
             members.add(new MaxwellWarrior01(nationName, tribeName, tribeLifePoints /6));
-            members.add(new MaxwellWarrior02(nationName, tribeName, tribeLifePoints /6));
             members.add(new MaxwellWizard01(nationName, tribeName, tribeLifePoints /6));
-            members.add(new MaxwellWizard02(nationName, tribeName, tribeLifePoints /6));
         }
         else if (nationName.equals("Tanishq's Nation")) {
             members.add(new TanishqHealer1(nationName, tribeName, tribeLifePoints /6));
-            members.add(new TanishqHealer2(nationName, tribeName, tribeLifePoints /6));
             members.add(new TanishqWarrior1(nationName, tribeName, tribeLifePoints /6));
-            members.add(new TanishqWarrior2(nationName, tribeName, tribeLifePoints /6));
             members.add(new TanishqWizard1(nationName, tribeName, tribeLifePoints /6));
-            members.add(new TanishqWizard2(nationName, tribeName, tribeLifePoints /6));
         }
         else if (nationName.equals("Elizabeth's Nation")) {
             members.add(new ElizabethWarrior(nationName, tribeName, tribeLifePoints / 6));
             members.add(new ElizabethWizard(nationName, tribeName, tribeLifePoints / 6));
             members.add(new ElizabethHealer(nationName, tribeName, tribeLifePoints / 6));
-            members.add(new ElizabethWizardSecond(nationName, tribeName, tribeLifePoints / 6));
-            members.add(new ElizabethHealerSecond(nationName, tribeName, tribeLifePoints / 6));
-            members.add(new ElizabethWarriorSecond(nationName, tribeName, tribeLifePoints / 6));
         }
         
 
