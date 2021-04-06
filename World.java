@@ -8,7 +8,6 @@ public class World
     private ArrayList<Nation> allLivingNations = new ArrayList<>();
 
 
-    //Random generator;
     Dice dice;
     ArrayList<People> worldCreatedPeople = new ArrayList<>();
 
@@ -19,7 +18,6 @@ public class World
         // seed for psuedo-random number generator
         Date seed = new Date();
         dice = new Dice(seed.getTime());
-        //generator = new Random(seed.getTime());
         createWorld();
         worldCreatedPeople.addAll(getWorldCreatedPopulation());
     }
