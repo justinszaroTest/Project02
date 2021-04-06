@@ -34,6 +34,11 @@ public class Tribe
             members.add(new ElizabethWizard(nationName, tribeName, tribeLifePoints / 6));
             members.add(new ElizabethHealer(nationName, tribeName, tribeLifePoints / 6));
         }
+
+        else if (nationName.equals("Artifact's Nation")) {
+            //we add our special characters
+            members.add(new ElizabethArtifact(nationName,tribeName, 5));
+        }
         
 
 
