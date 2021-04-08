@@ -4,7 +4,8 @@ public enum PeopleType
     wizard  ("wizard"),
     warrior ("warrior"),
     cleric ("Healer"),
-    angel ("Angel");
+    angel ("Angel"),
+    reaper ("Death");
 
 
 
