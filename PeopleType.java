@@ -3,7 +3,10 @@ public enum PeopleType
 {
     wizard  ("wizard"),
     warrior ("warrior"),
-    cleric ("Healer");
+    cleric ("Healer"),
+    angel ("Angel");
+
+
 
     private String description;
 

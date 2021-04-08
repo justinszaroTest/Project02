@@ -67,6 +67,8 @@ public class World
         allNations.add(new Nation("Justin's Nation", (worldLifePoints) / 4));
         allNations.add(new Nation("Elizabeth's Nation", (worldLifePoints / 4)));
         allNations.add(new Nation("Tanishq's Nation", (worldLifePoints) / 4));
+        allNations.add(new Nation("Artifact's Nation", (worldLifePoints) / 4));
+
     }
 
 
