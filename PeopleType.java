@@ -5,7 +5,8 @@ public enum PeopleType
     warrior ("warrior"),
     cleric ("Healer"),
     angel ("Angel"),
-    reaper ("Death");
+    reaper ("Death"),
+    TheFlash("The Flash");
 
 
 
