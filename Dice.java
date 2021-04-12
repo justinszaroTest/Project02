@@ -1,7 +1,11 @@
 import java.util.Random;
 
 /**
- * Class represents a dice.
+ * The Dice object generates a random numbers based on the number of faces or a long.
+ *
+ * @author Max Schuman, Elizabeth Vicente, Tanishq Iyer, Justin Szaro
+ * @version 3.0
+ * @since 2021-04-11
  */
 public class Dice {
 
@@ -9,7 +13,7 @@ public class Dice {
     Random faceGenerator;
 
     /**
-     * Creates a dice.
+     * Creates a dice object.
      * @param date the seed.
      */
     public Dice(long date) {
@@ -34,7 +38,7 @@ public class Dice {
     }
 
     /**
-     * Rolls a dice 1-faces.
+     * Rolls a dice with int faces.
      * @param faces the number of faces on the die.
      * @return a number between 1-faces.
      */
