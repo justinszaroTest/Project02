@@ -18,11 +18,17 @@ public class Nation
     {
         nationName = name;
         nationLifePoints = lifePoints;
-        for(int i = 0; i < 3; i++)
-        {
-            this.tribes.add(new Tribe(nationName, "Tribe" + i, nationLifePoints / 3));
-
+        if (!nationName.equals("Artifact's Nation")) {
+            for(int i = 0; i < 3; i++)
+            {
+                this.tribes.add(new Tribe(nationName, "Tribe" + i, nationLifePoints / 3));
+            }
         }
+        else {
+            this.tribes.add(new Tribe(nationName, "Artifacts", lifePoints));
+        }
+
+
         population.addAll(getNationPopulation());
         livingPopulation.addAll(population);
     }

@@ -62,12 +62,11 @@ public class World
 
     public void createWorld()
     {
-
         allNations.add(new Nation("Maxwell's Nation", (worldLifePoints / 4)));
         allNations.add(new Nation("Justin's Nation", (worldLifePoints) / 4));
         allNations.add(new Nation("Elizabeth's Nation", (worldLifePoints / 4)));
         allNations.add(new Nation("Tanishq's Nation", (worldLifePoints) / 4));
-        allNations.add(new Nation("Artifact's Nation", (worldLifePoints) / 4));
+        allNations.add(new Nation("Artifact's Nation", 12));
 
     }
 
@@ -127,7 +126,16 @@ public class World
         Integer p1damage =  (int) (dice.roll() * person1LifePointsToUse);
         Integer p2damage =  (int) (dice.roll()  * person2LifePointsToUse);
 
-        if ((p1damage > 0) && (p2damage > 0))  // person 1  and person 2 are fighting and inflicting damage
+
+        if ((worldCreatedPeople.get(person1).getNation().equals("Artifact's Nation"))) {
+            p2damage =  (int) (dice.roll() * (worldCreatedPeople.get(person1).getType().ordinal()+1)*p1damage);
+            p1damage =  0;
+        }
+        else if ((worldCreatedPeople.get(person2).getNation().equals("Artifact's Nation"))) {
+            p1damage =  (int) (dice.roll() * (worldCreatedPeople.get(person1).getType().ordinal()+1)*p1damage);
+            p2damage =  0;
+        }
+        else if ((p1damage > 0) && (p2damage > 0))  // person 1  and person 2 are fighting and inflicting damage
         {
             p2damage =  (int) (dice.roll() * (worldCreatedPeople.get(person1).getType().ordinal()+1)*p1damage);
             p1damage =  (int) (dice.roll() * (worldCreatedPeople.get(person2).getType().ordinal()+1)*p2damage);
@@ -151,8 +159,10 @@ public class World
         worldCreatedPeople.get(person2).modifyLifePoints((-p1damage ));
 
         // Both people lose 1 life point per encounter due to aging
-        worldCreatedPeople.get(person1).modifyLifePoints((-1));
-        worldCreatedPeople.get(person2).modifyLifePoints((-1));
+        if (!worldCreatedPeople.get(person1).getNation().equals("Artifact's Nation"))
+            worldCreatedPeople.get(person1).modifyLifePoints((-1));
+        if (!worldCreatedPeople.get(person2).getNation().equals("Artifact's Nation"))
+            worldCreatedPeople.get(person2).modifyLifePoints((-1));
 
     }
 
