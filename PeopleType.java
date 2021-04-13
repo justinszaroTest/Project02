@@ -13,9 +13,8 @@ public enum PeopleType
     cleric ("Healer"),
     angel ("Angel"),
     reaper ("Death"),
-    TheFlash("The Flash");
-
-
+    TheFlash("The Flash"),
+    curse ("Curse");
 
     private final String description;
 
@@ -28,10 +27,12 @@ public enum PeopleType
         description = types;
     }
 
+
     /**
      * Returns the Players established description.
      * @return description
      */
+
     public String getDescription()
     {
         return description;
