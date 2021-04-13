@@ -1,5 +1,12 @@
 import java.util.*;
 
+/**
+ *
+ *
+ * @author Max Schuman, Elizabeth Vicente, Tanishq Iyer, Justin Szaro
+ * @version 3.0
+ * @since 2021-04-11
+ */
 public class World
 {
     private final int worldLifePoints = 4000;
@@ -70,7 +77,10 @@ public class World
 
     }
 
-
+    /**
+     * Adds all People of all types per nation and tribe to livingPeople ArrayList
+     * @return livingPeople An ArrayList with all people objects in it.
+     */
     public ArrayList<People> getWorldCreatedPopulation()
     {
         ArrayList<People> livingPeople = new ArrayList<>();
@@ -110,7 +120,13 @@ public class World
         return survivingNations;
     }
 
-
+    /**
+     * This is the turn where P1 attacks P2 in the turn
+     * Calls their encounter stategies to get the number of lifepoints used, and sets the damage or heath to each
+     * player.
+     * @param person1 first member of the encounter
+     * @param person2 second member of the encounter
+     */
     public void encounter(Integer person1, Integer person2)
     {
         Integer person1LifePointsToUse;
@@ -166,11 +182,15 @@ public class World
 
     }
 
-
+    /**
+     * Goes through one round of the game and sets up the encounters.
+     * Returns all living nations
+     * @param combatants An arrayList of living people
+     * @return
+     */
     public void playOneRound(ArrayList<Integer> combatants)
     {
         System.out.println(combatants.size());
-        ArrayList<Integer> survivors = new ArrayList<>();
         Integer numberOfCombatants;
         Collections.shuffle(combatants);
         numberOfCombatants = combatants.size() - 1;
