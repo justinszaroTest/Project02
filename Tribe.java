@@ -53,6 +53,7 @@ public class Tribe
             //we add our special characters
             members.add(new ElizabethArtifact(nationName,tribeName, lifePoints / 4));
             members.add(new DeathArtifact(nationName, tribeName, lifePoints / 4));
+            members.add(new TheFlashArtifact(nationName,tribeName, lifePoints/4));
         }
 
         for(int i = 0; i < members.size(); i++)
