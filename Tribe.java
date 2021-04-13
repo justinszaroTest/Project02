@@ -50,9 +50,9 @@ public class Tribe
         else if (nation.equals("Artifact's Nation")) {
             //we add our special characters
 
-            members.add(new ElizabethArtifact(nationName,tribeName, lifePoints / 4));
-            members.add(new DeathArtifact(nationName, tribeName, lifePoints / 4));
-            members.add(new TanishqCurseArtifact(nationName, tribeName, lifePoints / 4));
+            members.add(new ElizabethArtifact(nation,tribeName, lifePoints / 4));
+            members.add(new DeathArtifact(nation, tribeName, lifePoints / 4));
+            members.add(new TanishqCurseArtifact(nation, tribeName, lifePoints / 4));
 
         }
 
