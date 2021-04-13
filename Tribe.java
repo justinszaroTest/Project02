@@ -52,7 +52,8 @@ public class Tribe
             members.add(new ElizabethArtifact(nation,tribeName, lifePoints / 4));
             members.add(new DeathArtifact(nation, tribeName, lifePoints / 4));
             members.add(new TheFlashArtifact(nation,tribeName, lifePoints/4));
-
+            members.add(new TanishqCurseArtifact(nation, tribeName, lifePoints / 4));
+      
 
         }
 
