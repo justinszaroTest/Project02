@@ -25,18 +25,16 @@ public class JustinWizard1 extends People {
      */
     public int encounterStrategy(People otherPerson) {
         int lifePoints = 0;
-        if (this.getNation() != otherPerson.getNation()) {
+        if (!this.getNation().equals(otherPerson.getNation())) {
             if (otherPerson.getLifePoints() < this.getLifePoints()) {
                 if (otherPerson.getType() == PeopleType.wizard) // fight harder
                 {
                     lifePoints = this.getLifePoints();
                 } else // attack normal
                 {
-                    lifePoints = (int) (this.getLifePoints() / 2);
+                    lifePoints = this.getLifePoints() / 2;
                 }
             }
-        } else {
-            lifePoints = 0;
         }
         return lifePoints;
     }

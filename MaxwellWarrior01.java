@@ -4,7 +4,7 @@ public class MaxwellWarrior01 extends People {
 
     public MaxwellWarrior01(String nation, String tribe,  int lifePoints) {
         super(nation, tribe, PeopleType.warrior, lifePoints);
-        myDescription =  "Max's Warrior 01";
+        myDescription =  "\tMax's Warrior 01";
     }
 
     @Override
@@ -24,7 +24,7 @@ public class MaxwellWarrior01 extends People {
         }
         else{
             if(otherPerson.getType() == PeopleType.wizard){
-                numberOfLifePoints = -(this.getLifePoints()); // I am running away becuase i shouldnt be in this war
+                numberOfLifePoints = -(this.getLifePoints()); // I am running away because i shouldn't be in this war
 
             }
         }
