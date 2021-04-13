@@ -17,7 +17,7 @@ public enum PeopleType
 
 
 
-    private String description;
+    private final String description;
 
     /**
      *Sets the description of the Person to its type.

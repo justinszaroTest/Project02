@@ -9,7 +9,7 @@ public class ElizabethArtifact extends People {
 
     /**
      * If we are from the same class than compares the life points. If its less than 75 make it full else
-     * -(numberOfLifePoints / diceRollOfTurn.rollFaces(6)). Subratract one life point
+     * -(numberOfLifePoints / diceRollOfTurn.rollFaces(6)). Subtract one life point
      * <p>
      * If we are from different nations. If its a wizard and the lifepoint is divisible by 3 set a certain life point of
      * numberOfLifePoints = otherPerson.getLifePoints() * damageValue; as well as  this lifePoint (turnsAvailable) --;

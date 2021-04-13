@@ -3,7 +3,7 @@
  * PeopleType.java, and assigns the persons lifepoints. The class also includes getters for the Person's PeopleType,
  * Tribe, Nation, and Lifepoints. The isPersonAlive() method checks to see if the persons lifepoints > 0 and the
  * modifyLifePoints()  method reduces the person's Lifepoints. The toString() method outputs the current person's
- * values. The encounterStategy method currently does nothing.
+ * values. The encounterStrategy method currently does nothing.
  *
  * @author Max Schuman, Elizabeth Vicente, Tanishq Iyer, Justin Szaro
  * @version 3.0
@@ -11,10 +11,9 @@
  */
 public abstract class People
 {
-    private String personName;
-    private String myNation;
-    private String myTribe;
-    private PeopleType me;
+    private final String myNation;
+    private final String myTribe;
+    private final PeopleType me;
     protected String myDescription;
     private int myLifePoints;
     private boolean dead;
@@ -116,8 +115,7 @@ public abstract class People
      */
     public String toString()
     {
-        String result = new String( myNation + "\t" +  myTribe + "\t" + me + "\t" + myDescription + "\t" + myLifePoints);
-        return result;
+        return new String( myNation + "\t" +  myTribe + "\t" + me + "\t" + myDescription + "\t" + myLifePoints);
     }
 }
 

@@ -2,20 +2,16 @@ public class ElizabethHealer extends People {
 
     public ElizabethHealer(String nation, String tribe,  int lifePoints) {
         super(nation, tribe, PeopleType.cleric, lifePoints);
-        myDescription =  "\tELizabeth Healer";
+        myDescription =  "\tElizabeth Healer";
     }
     @Override
     public int encounterStrategy(People otherPerson) {
         int numberOfLifePoints = 0;
-        if(this.getNation() == otherPerson.getNation()){ //if we're from the same nation
+        if(this.getNation().equals(otherPerson.getNation())){ //if we're from the same nation
             if(this.getLifePoints() > otherPerson.getLifePoints()){ //if I have more lifePoints than them returning a negative value
                 numberOfLifePoints = -(this.getLifePoints()/3);
 
             }
-            else{
-                numberOfLifePoints = 0;
-            }
-
         }
         else{ //different nations
             if(otherPerson.getType() == PeopleType.wizard){

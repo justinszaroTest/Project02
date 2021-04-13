@@ -4,8 +4,8 @@ import java.util.ArrayList;
 /**
  * This class creates the Nations from World, and is able to pass that information to the Tribe class.
  * It checks the intended nations lifepoints to see if that are still alive in isNationAlive().
- *GetNationPopulation will go through and check to see if the tribe is alive, if they are the number of memebers is added to a living
- population list and the nationslife points are also documented.
+ *GetNationPopulation will go through and check to see if the tribe is alive, if they are the number of members is added to a living
+ population list and the nations lifepoints are also documented.
  We can print the Tribes information, using getTribeName and getTribeSize in the printTribesStatus() function
  * @author Max Schuman, Elizabeth Vicente, Tanishq Iyer, Justin Szaro
  * @version 3.0
@@ -14,10 +14,9 @@ import java.util.ArrayList;
 public class Nation
 {
     private int nationLifePoints;
-    private String nationName;
-    private ArrayList<Tribe> tribes = new ArrayList<>();
-    private ArrayList<People> population = new ArrayList<>();
-    private ArrayList<People> livingPopulation = new ArrayList<>();
+    private final String nationName;
+    private final ArrayList<Tribe> tribes = new ArrayList<>();
+    private final ArrayList<People> livingPopulation = new ArrayList<>();
 
     /**
      * Creates new 3 new tribes for every nation that is created. Also creates the artifact nation. The population
@@ -40,7 +39,7 @@ public class Nation
         }
 
 
-        population.addAll(getNationPopulation());
+        ArrayList<People> population = new ArrayList<>(getNationPopulation());
         livingPopulation.addAll(population);
     }
 
@@ -52,14 +51,12 @@ public class Nation
     {
         nationLifePoints = 0;
         livingPopulation.clear();
-        for(int tribe = 0; tribe < this.tribes.size(); tribe++)
-        {
-            if(tribes.get(tribe).isTribeAlive())
-            {
+        for (Tribe value : this.tribes) {
+            if (value.isTribeAlive()) {
                 //System.out.println(tribes.get(tribe));
-                livingPopulation.addAll(tribes.get(tribe).getLivingTribeMembers());
+                livingPopulation.addAll(value.getLivingTribeMembers());
                 //System.out.println(tribes.get(tribe).getLivingTribeMembers());
-                nationLifePoints += tribes.get(tribe).getTribeLifePoints();
+                nationLifePoints += value.getTribeLifePoints();
             }
         }
         return livingPopulation;
@@ -102,14 +99,13 @@ public class Nation
      */
     public String toString()
     {
-        String result = "\0";
-        result = nationName;
-        for(int i = 0; i < tribes.size(); i++)
-        {
-            result = result + '\n' + tribes.get(i).toString();
+        StringBuilder result;
+        result = new StringBuilder(nationName);
+        for (Tribe tribe : tribes) {
+            result.append('\n').append(tribe.toString());
 
         }
-        result = result + '\n';
-        return result;
+        result.append('\n');
+        return result.toString();
     }
 }

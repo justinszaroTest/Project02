@@ -2,7 +2,7 @@ public class MaxwellWizard01 extends People {
 
     MaxwellWizard01(String nation, String tribe, int lifePoints) {
         super(nation, tribe, PeopleType.wizard, lifePoints);
-        myDescription = "Max's Wizard 1";
+        myDescription = "\tMax's Wizard 01";
     }
 
     public int encounterStrategy(People otherPerson) {
@@ -14,13 +14,10 @@ public class MaxwellWizard01 extends People {
                     lifePoints = this.getLifePoints();
                 } else
                 {
-                    lifePoints = (int) (this.getLifePoints() / 3);
+                    lifePoints = this.getLifePoints() / 3;
                 }
             }
-        } else {
-            lifePoints = 0;
         }
-
         return lifePoints;
     }
 }
