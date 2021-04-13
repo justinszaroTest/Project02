@@ -4,7 +4,7 @@ public class TanishqHealer1 extends People
     TanishqHealer1(String nation, String tribe, int lifePoints)
     {
         super(nation, tribe, PeopleType.cleric, lifePoints);
-        myDescription = "\tTanishq Healer A";
+        myDescription = "\tTanishq Healer 01";
     }
 
     public int encounterStrategy(People otherPerson)
