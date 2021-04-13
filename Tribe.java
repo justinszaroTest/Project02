@@ -53,6 +53,7 @@ public class Tribe
             members.add(new DeathArtifact(nation, tribeName, lifePoints / 4));
             members.add(new TheFlashArtifact(nation,tribeName, lifePoints/4));
 
+
         }
 
         for(int i = 0; i < members.size(); i++)
