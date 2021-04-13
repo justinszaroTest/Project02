@@ -18,11 +18,14 @@ public class TheFlashArtifact extends People  {
     @Override
     public int encounterStrategy(People otherPerson)  {
 
-        if ((this.getNation().equals(otherPerson.getNation())))
+        if ((!this.getNation().equals(otherPerson.getNation()))) {
         members.add(new MaxwellHealer01(nationName, tribeName, tribeLifePoints /6));
         members.add(new MaxwellWarrior01(nationName, tribeName, tribeLifePoints /6));
         members.add(new MaxwellWizard01(nationName, tribeName, tribeLifePoints /6));
 
+
+
+        }
         return 0;
     }
 }

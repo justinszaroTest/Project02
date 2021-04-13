@@ -42,7 +42,6 @@ public class Nation
         ArrayList<People> population = new ArrayList<>(getNationPopulation());
         livingPopulation.addAll(population);
     }
-
     /**
      * Finds the people in each tribe in each nation that are still alive
      * @return  livingPopulation An arrayList containing all living people.
