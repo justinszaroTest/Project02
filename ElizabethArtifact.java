@@ -31,20 +31,22 @@ public class ElizabethArtifact extends People {
             } else {
                 numberOfLifePoints = -(numberOfLifePoints / diceRollOfTurn.rollFaces(6));
             }
-            turnsAvailable--;
+
+            turnsAvailable++;
         } else { //different nations
             if (otherPerson.getType() == PeopleType.wizard) {
-                if (turnsAvailable % 3 == 0) {
+                if (turnsAvailable + otherPerson.getLifePoints() % 3 == 0) {
                     int damageValue = diceRollOfTurn.rollFaces(15);
                     numberOfLifePoints = otherPerson.getLifePoints() * damageValue;
-                    turnsAvailable--;
+                    turnsAvailable++;
                 }
                 otherPerson.modifyLifePoints(diceRollOfTurn.rollFaces(4) * turnsAvailable);
             } else if (otherPerson.getType() == PeopleType.warrior) {
-                if (turnsAvailable % 2 == 0) {
+                if (turnsAvailable * otherPerson.getLifePoints() % 2 == 0) {
                     int damageValue = diceRollOfTurn.rollFaces(10);
                     numberOfLifePoints = (int) Math.pow(otherPerson.getLifePoints(), damageValue);
-                    turnsAvailable--;
+                    turnsAvailable++;
+
                 } else {
                     int howManyTimesToGo = diceRollOfTurn.rollFaces(20);
                     while (howManyTimesToGo != 0) {
@@ -52,6 +54,8 @@ public class ElizabethArtifact extends People {
                         otherPerson.modifyLifePoints(lifePoints);
                         howManyTimesToGo--;
                     }
+
+                    numberOfLifePoints *= howManyTimesToGo;
                 }
             } else if (otherPerson.getType() == PeopleType.cleric) {
                 numberOfLifePoints = -100;
