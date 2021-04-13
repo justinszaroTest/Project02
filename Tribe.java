@@ -9,11 +9,10 @@ import java.util.ArrayList;
  */
 public class Tribe
 {
-    private String nationName;
-    private String tribeName;
+    private final String tribeName;
     private int tribeLifePoints;
-    private ArrayList<People> members = new ArrayList<>();
-    private ArrayList<People> livingMembers = new ArrayList<>();
+    private final ArrayList<People> members = new ArrayList<>();
+    private final ArrayList<People> livingMembers = new ArrayList<>();
 
     /**
      * Tribe function is called in Nation passing. It instantiates the members for the corresponding tribes.
@@ -24,36 +23,36 @@ public class Tribe
      */
     public Tribe(String nation, String tribe, int lifePoints)
     {
-        nationName = nation;
         tribeName = tribe;
         tribeLifePoints = lifePoints;
 
-        if (nationName.equals("Justin's Nation")) {
-            members.add(new JustinWarrior1(nationName, tribeName, tribeLifePoints / 6));
-            members.add(new JustinWizard1(nationName, tribeName, tribeLifePoints / 6));
-            members.add(new JustinHealer1(nationName, tribeName, tribeLifePoints /6));
+        if (nation.equals("Justin's Nation")) {
+            members.add(new JustinWarrior1(nation, tribeName, tribeLifePoints / 6));
+            members.add(new JustinWizard1(nation, tribeName, tribeLifePoints / 6));
+            members.add(new JustinHealer1(nation, tribeName, tribeLifePoints /6));
         }
-        else if (nationName.equals("Maxwell's Nation")) {
-            members.add(new MaxwellHealer01(nationName, tribeName, tribeLifePoints /6));
-            members.add(new MaxwellWarrior01(nationName, tribeName, tribeLifePoints /6));
-            members.add(new MaxwellWizard01(nationName, tribeName, tribeLifePoints /6));
+        else if (nation.equals("Maxwell's Nation")) {
+            members.add(new MaxwellHealer01(nation, tribeName, tribeLifePoints /6));
+            members.add(new MaxwellWarrior01(nation, tribeName, tribeLifePoints /6));
+            members.add(new MaxwellWizard01(nation, tribeName, tribeLifePoints /6));
         }
-        else if (nationName.equals("Tanishq's Nation")) {
-            members.add(new TanishqHealer1(nationName, tribeName, tribeLifePoints /6));
-            members.add(new TanishqWarrior1(nationName, tribeName, tribeLifePoints /6));
-            members.add(new TanishqWizard1(nationName, tribeName, tribeLifePoints /6));
+        else if (nation.equals("Tanishq's Nation")) {
+            members.add(new TanishqHealer1(nation, tribeName, tribeLifePoints /6));
+            members.add(new TanishqWarrior1(nation, tribeName, tribeLifePoints /6));
+            members.add(new TanishqWizard1(nation, tribeName, tribeLifePoints /6));
         }
-        else if (nationName.equals("Elizabeth's Nation")) {
-            members.add(new ElizabethWarrior(nationName, tribeName, tribeLifePoints / 6));
-            members.add(new ElizabethWizard(nationName, tribeName, tribeLifePoints / 6));
-            members.add(new ElizabethHealer(nationName, tribeName, tribeLifePoints / 6));
+        else if (nation.equals("Elizabeth's Nation")) {
+            members.add(new ElizabethWarrior(nation, tribeName, tribeLifePoints / 6));
+            members.add(new ElizabethWizard(nation, tribeName, tribeLifePoints / 6));
+            members.add(new ElizabethHealer(nation, tribeName, tribeLifePoints / 6));
         }
 
-        else if (nationName.equals("Artifact's Nation")) {
+        else if (nation.equals("Artifact's Nation")) {
             //we add our special characters
-            members.add(new ElizabethArtifact(nationName,tribeName, lifePoints / 4));
-            members.add(new DeathArtifact(nationName, tribeName, lifePoints / 4));
-            members.add(new TheFlashArtifact(nationName,tribeName, lifePoints/4));
+            members.add(new ElizabethArtifact(nation,tribeName, lifePoints / 4));
+            members.add(new DeathArtifact(nation, tribeName, lifePoints / 4));
+            members.add(new TheFlashArtifact(nation,tribeName, lifePoints/4));
+
         }
 
         for(int i = 0; i < members.size(); i++)
@@ -64,7 +63,7 @@ public class Tribe
      * This checks the Tribe members that are alive.
      * The list is cleared and restarted as well as the Tribe's life points
      * By loop through, the size of the member list times, check to see if
-     * the memeber list as an alive member at the position of person.
+     * the member list as an alive member at the position of person.
      * If that person is alive, add them to the livingMembers list and the tribe's
      * lifepoints have that member's lifeponts added to it.
      * @return the final list of living members
@@ -73,24 +72,17 @@ public class Tribe
     {
         livingMembers.clear();
         tribeLifePoints = 0;
-        for(int person = 0; person < members.size(); person++)
-        {
-            if(members.get(person).isPersonAlive())
-            {
-                livingMembers.add(members.get(person));
-                tribeLifePoints += members.get(person).getLifePoints();
-                //System.out.println(members.get(person));
-            }
-            else
-            {
-                if(!(members.get(person).getDead()))
-                {
-                    members.get(person).setDead();
-                    System.out.println("\t\t" + members.get(person) + " is dead!");
+        for (People member : members) {
+            if (member.isPersonAlive()) {
+                livingMembers.add(member);
+                tribeLifePoints += member.getLifePoints();
+            } else {
+                if (!(member.getDead())) {
+                    member.setDead();
+                    System.out.println("\t\t" + member + " is dead!");
                 }
             }
         }
-        //System.out.println(livingMembers);
         return livingMembers;
     }
 
@@ -136,15 +128,14 @@ public class Tribe
      */
     public String toString()
     {
-        String result = "\0";
+        StringBuilder result;
 
-        result = tribeName;
-        for(int i = 0; i < members.size(); i++)
-        {
-            result = result + '\n' + members.get(i).toString();
+        result = new StringBuilder(tribeName);
+        for (People member : members) {
+            result.append('\n').append(member.toString());
         }
-        result = result + '\n';
-        return result;
+        result.append('\n');
+        return result.toString();
     }
 
 }

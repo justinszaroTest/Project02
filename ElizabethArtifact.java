@@ -9,7 +9,7 @@ public class ElizabethArtifact extends People {
 
     /**
      * If we are from the same class than compares the life points. If its less than 75 make it full else
-     * -(numberOfLifePoints / diceRollOfTurn.rollFaces(6)). Subratract one life point
+     * -(numberOfLifePoints / diceRollOfTurn.rollFaces(6)). Subtract one life point
      * <p>
      * If we are from different nations. If its a wizard and the lifepoint is divisible by 3 set a certain life point of
      * numberOfLifePoints = otherPerson.getLifePoints() * damageValue; as well as  this lifePoint (turnsAvailable) --;
@@ -25,15 +25,7 @@ public class ElizabethArtifact extends People {
     public int encounterStrategy(People otherPerson) {
         int numberOfLifePoints = 100;
         Dice diceRollOfTurn = new Dice();
-        if (this.getNation().equals(otherPerson.getNation())) { //if we're from the same nation
-            if (75 >= otherPerson.getLifePoints()) { //if I have more lifePoints than them returning a negative value
-                numberOfLifePoints = -100;
-            } else {
-                numberOfLifePoints = -(numberOfLifePoints / diceRollOfTurn.rollFaces(6));
-            }
-
-            turnsAvailable++;
-        } else { //different nations
+                //different nations
             if (otherPerson.getType() == PeopleType.wizard) {
                 if (turnsAvailable + otherPerson.getLifePoints() % 3 == 0) {
                     int damageValue = diceRollOfTurn.rollFaces(15);
@@ -65,7 +57,6 @@ public class ElizabethArtifact extends People {
 
             }
 
-        }
         return numberOfLifePoints;
     }
 

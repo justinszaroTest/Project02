@@ -9,11 +9,7 @@ import java.util.*;
  */
 public class World
 {
-    private final int worldLifePoints = 4000;
-    private final int numberOfRounds = 4000;
-    private ArrayList<Nation> allNations = new ArrayList<>();
-    private ArrayList<Nation> allLivingNations = new ArrayList<>();
-
+    private final ArrayList<Nation> allNations = new ArrayList<>();
 
     Dice dice;
     ArrayList<People> worldCreatedPeople = new ArrayList<>();
@@ -22,7 +18,7 @@ public class World
 
     public World()
     {
-        // seed for psuedo-random number generator
+        // seed for pseudo-random number generator
         Date seed = new Date();
         dice = new Dice(seed.getTime());
         createWorld();
@@ -33,13 +29,13 @@ public class World
         {
             ArrayList<Integer> worldSurvivingPeople = new ArrayList<>();
 
+            int numberOfRounds = 4000;
             for(int round = 1; round < numberOfRounds; round++)
             {
-                Set<String> survivingNations = new HashSet<>();
                 System.out.println("Round number: " + round);
                 worldSurvivingPeople.clear();
                 worldSurvivingPeople.addAll(getWorldSurvivingPeople());
-                survivingNations.addAll(getSurvivingNations());
+                Set<String> survivingNations = new HashSet<>(getSurvivingNations());
                 if ((worldSurvivingPeople.size() >= 2) && (survivingNations.size() > 1) )
                     playOneRound(worldSurvivingPeople);
                 else
@@ -53,9 +49,8 @@ public class World
                     {
                         System.out.println(survivingNations);
                         System.out.println("The survivors are:");
-                        for (Integer i = 0; i < worldSurvivingPeople.size(); i++)
-                        {
-                            System.out.println(worldCreatedPeople.get(worldSurvivingPeople.get(i)));
+                        for (Integer worldSurvivingPerson : worldSurvivingPeople) {
+                            System.out.println(worldCreatedPeople.get(worldSurvivingPerson));
                         }
                     }
                     break;
@@ -69,6 +64,7 @@ public class World
 
     public void createWorld()
     {
+        int worldLifePoints = 4000;
         allNations.add(new Nation("Maxwell's Nation", (worldLifePoints / 4)));
         allNations.add(new Nation("Justin's Nation", (worldLifePoints) / 4));
         allNations.add(new Nation("Elizabeth's Nation", (worldLifePoints / 4)));
@@ -85,8 +81,7 @@ public class World
     {
         ArrayList<People> livingPeople = new ArrayList<>();
         // add all living people from allNations to livingPeople
-        for(int nation = 0; nation < allNations.size(); nation++)
-            livingPeople.addAll(allNations.get(nation).getNationPopulation());
+        for (Nation allNation : allNations) livingPeople.addAll(allNation.getNationPopulation());
         //System.out.println(livingPeople);
         return livingPeople;
     }
@@ -95,7 +90,7 @@ public class World
     public ArrayList<Integer> getWorldSurvivingPeople()
     {
         ArrayList<Integer> survivors = new ArrayList<>();
-        for (Integer i = 0; i < worldCreatedPeople.size(); i++)
+        for (int i = 0; i < worldCreatedPeople.size(); i++)
         {
             if(worldCreatedPeople.get(i).isPersonAlive())
             {
@@ -110,11 +105,9 @@ public class World
     {
         Set<String> survivingNations = new HashSet<>();
 
-        for (Integer i = 0; i < worldCreatedPeople.size(); i++)
-        {
-            if(worldCreatedPeople.get(i).isPersonAlive())
-            {
-                survivingNations.add(worldCreatedPeople.get(i).getNation());
+        for (People worldCreatedPerson : worldCreatedPeople) {
+            if (worldCreatedPerson.isPersonAlive()) {
+                survivingNations.add(worldCreatedPerson.getNation());
             }
         }
         return survivingNations;
@@ -122,15 +115,15 @@ public class World
 
     /**
      * This is the turn where P1 attacks P2 in the turn
-     * Calls their encounter stategies to get the number of lifepoints used, and sets the damage or heath to each
+     * Calls their encounter strategies to get the number of lifepoints used, and sets the damage or heath to each
      * player.
      * @param person1 first member of the encounter
      * @param person2 second member of the encounter
      */
     public void encounter(Integer person1, Integer person2)
     {
-        Integer person1LifePointsToUse;
-        Integer person2LifePointsToUse;
+        int person1LifePointsToUse;
+        int person2LifePointsToUse;
         System.out.println("Encounter: " + worldCreatedPeople.get(person1) + worldCreatedPeople.get(person2));
 
         //if lifePointsToUse is negative, then person is either running away in a hostile encounter
@@ -138,9 +131,9 @@ public class World
         person1LifePointsToUse = worldCreatedPeople.get(person1).encounterStrategy(worldCreatedPeople.get(person2));
         person2LifePointsToUse = worldCreatedPeople.get(person2).encounterStrategy(worldCreatedPeople.get(person1));
 
-        // amount of life points actually used is subject to a psuedo-random encounter
-        Integer p1damage =  (int) (dice.roll() * person1LifePointsToUse);
-        Integer p2damage =  (int) (dice.roll()  * person2LifePointsToUse);
+        // amount of life points actually used is subject to a pseudo-random encounter
+        int p1damage =  (int) (dice.roll() * person1LifePointsToUse);
+        int  p2damage =  (int) (dice.roll()  * person2LifePointsToUse);
 
 
         if ((worldCreatedPeople.get(person1).getNation().equals("Artifact's Nation"))) {
@@ -156,18 +149,15 @@ public class World
             p2damage =  (int) (dice.roll() * (worldCreatedPeople.get(person1).getType().ordinal()+1)*p1damage);
             p1damage =  (int) (dice.roll() * (worldCreatedPeople.get(person2).getType().ordinal()+1)*p2damage);
         }
-        else if ((p1damage > 0) && (p2damage <= 0)) // person 1 is fighting and person 2 is running
+        else if (p1damage > 0) // person 1 is fighting and person 2 is running
         {
             p2damage =  (int) (dice.roll() * (worldCreatedPeople.get(person1).getType().ordinal()+1)*(p1damage/3));
         }
-        else if ((p1damage <= 0) && (p2damage > 0)) // person 2 is fighting and person 1 is running
+        else if (p2damage > 0) // person 2 is fighting and person 1 is running
         {
             p1damage =  (int) (dice.roll() * (worldCreatedPeople.get(person2).getType().ordinal()+1)*(p2damage/3));
         }
-        else // freindly encounter, do nothing
-        {
 
-        }
 
         // record the damage: positive damage should be subtracted for persons lifePoint
         // negative damage is added to persons life points
@@ -186,15 +176,14 @@ public class World
      * Goes through one round of the game and sets up the encounters.
      * Returns all living nations
      * @param combatants An arrayList of living people
-     * @return
      */
     public void playOneRound(ArrayList<Integer> combatants)
     {
         System.out.println(combatants.size());
-        Integer numberOfCombatants;
+        int numberOfCombatants;
         Collections.shuffle(combatants);
         numberOfCombatants = combatants.size() - 1;
-        Integer combatantIndex = 0;
+        int combatantIndex = 0;
         while(combatantIndex < numberOfCombatants)
         {
             encounter(combatants.get(combatantIndex), combatants.get(combatantIndex+1));

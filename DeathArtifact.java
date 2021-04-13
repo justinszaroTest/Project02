@@ -5,7 +5,7 @@
  * @version 3.0
  * @since 2021-04-11
  */
-public class DeathArtifact extends People{
+public class DeathArtifact extends People {
     /**
      * Instantiates a DeathArtifact Object and establishes its properties.
      * @param nation the nations name
