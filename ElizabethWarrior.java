@@ -6,32 +6,36 @@ public class ElizabethWarrior extends People {
         myDescription =  "\tElizabeth Warrior";
     }
 
+     /*** If we are from the same nation check our tribe and I have more life ponts than them, return a negative value
+     * If we are from different nations
+     *  Encounter Wizard- Run Away
+     *  Encounter Warrior- Fight depending on who has more lifepoints
+     *  Encounter Healer- Take all their health*/
     @Override
     public int encounterStrategy(People otherPerson) {
         int numberOfLifePoints = 0;
-        if(this.getNation().equals(otherPerson.getNation())){ //if we're from the same nation
-            if(this.getLifePoints() > otherPerson.getLifePoints()) { //if I have more lifePoints than them returning a negative value
-                if (otherPerson.getTribe().equals(this.getTribe())) { //we are from the same tribe
+        if(this.getNation().equals(otherPerson.getNation())){
+            if(this.getLifePoints() > otherPerson.getLifePoints()) {
+                if (otherPerson.getTribe().equals(this.getTribe())) {
                     numberOfLifePoints = -(this.getLifePoints()/2 - otherPerson.getLifePoints()-2);
                 }
-                else{ //not from the same tribe
+                else{
                     numberOfLifePoints = -(this.getLifePoints()/3 - otherPerson.getLifePoints()/2);
 
                 }
             }
 
         }
-        else{ //different nations
+        else{
             if(otherPerson.getType() == PeopleType.wizard){
-                numberOfLifePoints = -(this.getLifePoints()); //when Liz war encounters wizard - run away
-
+                numberOfLifePoints = -(this.getLifePoints());
             }
-            else if(otherPerson.getType() == PeopleType.warrior) { //when Liz warrior encounters warrior
-                if(otherPerson.getLifePoints() > this.getLifePoints()){ //if the other warrior has more life points
+            else if(otherPerson.getType() == PeopleType.warrior) {
+                if(otherPerson.getLifePoints() > this.getLifePoints()){
                     numberOfLifePoints = this.getLifePoints() - otherPerson.getLifePoints();
 
                 }
-                else{ //i have more or equal points
+                else{
                     numberOfLifePoints = this.getLifePoints() - 5 + otherPerson.getLifePoints()/4;
                 }
 
