@@ -5,6 +5,11 @@ public class ElizabethWizard extends People {
         super(nation, tribe, PeopleType.wizard, lifePoints);
         myDescription =  "\tElizabeth Wizard";
     }
+     /** If we are from the same nation and I have more life ponts than them, return a negative value
+     * If we are from different nations
+     *  Encounter Wizard- fight
+     *  Encounter Warrior- fight
+     *  Encounter Healer- Take all their lifepoints*/
 
     @Override
     public int encounterStrategy(People otherPerson) {
