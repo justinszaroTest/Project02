@@ -1,3 +1,9 @@
+/**
+ * The Elizabeth Artificat is an angel, based on the type and dice value, the angel will heal
+ * @author Max Schuman, Elizabeth Vicente, Tanishq Iyer, Justin Szaro
+ * @version 3.0
+ * @since 2021-04-11
+ */
 public class ElizabethArtifact extends People {
     public ElizabethArtifact(String nation, String tribe, int lifePoints) {
         super(nation, tribe, PeopleType.angel, lifePoints);

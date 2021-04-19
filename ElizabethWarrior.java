@@ -1,3 +1,9 @@
+/**
+ * The Elizabeth Warrior is a warrior, that will fight an opponent warrior , heal their members, run from wizards and steal health from healers
+ * @author Max Schuman, Elizabeth Vicente, Tanishq Iyer, Justin Szaro
+ * @version 3.0
+ * @since 2021-04-11
+ */
 public class ElizabethWarrior extends People {
 
 

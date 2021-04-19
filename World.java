@@ -1,7 +1,8 @@
 import java.util.*;
 
 /**
- *
+ *Creates the simualtion for the world, and populations. For every round played, the arrays of living and dead populations will be updated.
+ * The nations are created and added. One round is played at time, and those nations will follow through with their intended strategies
  *
  * @author Max Schuman, Elizabeth Vicente, Tanishq Iyer, Justin Szaro
  * @version 3.0
@@ -24,7 +25,9 @@ public class World
         createWorld();
         worldCreatedPeople.addAll(getWorldCreatedPopulation());
     }
-
+/**
+ * War is called from PlayGame. For each round, the arrays of surviving people are reset, if the arrays  are at least
+ * greater than 1 and 2, then a round is played, if not then the game is over*/
     public void war()
         {
             ArrayList<Integer> worldSurvivingPeople = new ArrayList<>();
@@ -86,7 +89,8 @@ public class World
         return livingPeople;
     }
 
-
+    /**
+     * Will return an ArrayList of all the survivors that are in worldCreatePeople*/
     public ArrayList<Integer> getWorldSurvivingPeople()
     {
         ArrayList<Integer> survivors = new ArrayList<>();
@@ -100,7 +104,9 @@ public class World
         return survivors;
     }
 
-
+    /**
+     * Goes through the world created array list, will update the survivingNations HashSet with
+     * those people alive in worldCreatedPerson*/
     public Set<String> getSurvivingNations()
     {
         Set<String> survivingNations = new HashSet<>();
