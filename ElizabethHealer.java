@@ -1,3 +1,9 @@
+/**
+ * The Elizabeth Healer is a healer, based on the opponent type, the cleric will heal or fight
+ * @author Max Schuman, Elizabeth Vicente, Tanishq Iyer, Justin Szaro
+ * @version 3.0
+ * @since 2021-04-11
+ */
 public class ElizabethHealer extends People {
 
     public ElizabethHealer(String nation, String tribe,  int lifePoints) {
