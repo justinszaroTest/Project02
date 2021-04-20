@@ -12,7 +12,12 @@
 public class MaxwellWarrior01 extends People {
 
 
-
+    /**
+     * Instantiates a MaxwellWarrior01 Object and establishes its properties.
+     * @param nation
+     * @param tribe
+     * @param lifePoints
+     */
     public MaxwellWarrior01(String nation, String tribe,  int lifePoints) {
         super(nation, tribe, PeopleType.warrior, lifePoints);
         myDescription =  "\tMax's Warrior 01";

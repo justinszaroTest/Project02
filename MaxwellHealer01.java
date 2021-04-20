@@ -10,6 +10,12 @@
 
 
 public class MaxwellHealer01 extends People {
+    /**
+     * Instantiates a Max's Healer 01 Object and establishes its properties.
+     * @param nation
+     * @param tribe
+     * @param lifePoints
+     */
     MaxwellHealer01(String nation, String tribe, int lifePoints) {
         super(nation, tribe, PeopleType.cleric, lifePoints);
         myDescription = "\tMax's Healer 01";

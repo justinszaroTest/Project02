@@ -10,7 +10,12 @@
 
 
 public class MaxwellWizard01 extends People {
-
+    /**
+     * Instantiates a MaxwellWizard01 Object and establishes its properties.
+     * @param nation
+     * @param tribe
+     * @param lifePoints
+     */
     MaxwellWizard01(String nation, String tribe, int lifePoints) {
         super(nation, tribe, PeopleType.wizard, lifePoints);
         myDescription = "\tMax's Wizard 01";
