@@ -16,6 +16,11 @@ public class MaxwellWizard01 extends People {
         myDescription = "\tMax's Wizard 01";
     }
 
+    /**
+     * when the other person is a wizard my wizard does 3x damage
+     * @param otherPerson Other Person who is involved in the encounter
+     * @return
+     */
     public int encounterStrategy(People otherPerson) {
         int lifePoints = 0;
         if (!this.getNation().equals(otherPerson.getNation())) {
