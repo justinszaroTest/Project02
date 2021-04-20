@@ -1,5 +1,5 @@
 /**
- * Maxwell Warrior 1 wgen encountered runs away because they shouldn't be in the war
+ * Maxwell Warrior 1 when encountered runs away because they shouldn't be in the war
  *
  * @author Max Schuman, Elizabeth Vicente, Tanishq Iyer, Justin Szaro
  * @version 3.0
@@ -12,12 +12,22 @@
 public class MaxwellWarrior01 extends People {
 
 
-
+    /**
+     * Instantiates a MaxwellWarrior01 Object and establishes its properties.
+     * @param nation
+     * @param tribe
+     * @param lifePoints
+     */
     public MaxwellWarrior01(String nation, String tribe,  int lifePoints) {
         super(nation, tribe, PeopleType.warrior, lifePoints);
         myDescription =  "\tMax's Warrior 01";
     }
 
+    /**
+     * attaks as normal when encountering everyone except a wizard. If encounters wizard then runs from encounter
+     * @param otherPerson Other Person who is involved in the encounter
+     * @return
+     */
     @Override
     public int encounterStrategy(People otherPerson) {
         int numberOfLifePoints = 0;
