@@ -1,3 +1,12 @@
+/**
+ * The Wizard 1 if they encounter another wizard they do 3x the damage
+ *
+ * @author Max Schuman, Elizabeth Vicente, Tanishq Iyer, Justin Szaro
+ * @version 3.0
+ * @since 2021-04-11
+ */
+
+
 public class MaxwellWizard01 extends People {
 
     MaxwellWizard01(String nation, String tribe, int lifePoints) {

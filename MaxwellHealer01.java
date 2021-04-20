@@ -1,3 +1,12 @@
+/**
+ * The MaxwellHealer 1 will heal 5 health for when the healer encounters someone.
+ *
+ * @author Max Schuman, Elizabeth Vicente, Tanishq Iyer, Justin Szaro
+ * @version 3.0
+ * @since 2021-04-11
+ */
+
+
 public class MaxwellHealer01 extends People {
     MaxwellHealer01(String nation, String tribe, int lifePoints) {
         super(nation, tribe, PeopleType.cleric, lifePoints);

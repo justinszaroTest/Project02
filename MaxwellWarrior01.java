@@ -1,3 +1,12 @@
+/**
+ * Maxwell Warrior 1 wgen encountered runs away because they shouldn't be in the war
+ *
+ * @author Max Schuman, Elizabeth Vicente, Tanishq Iyer, Justin Szaro
+ * @version 3.0
+ * @since 2021-04-11
+ */
+
+
 public class MaxwellWarrior01 extends People {
 
 

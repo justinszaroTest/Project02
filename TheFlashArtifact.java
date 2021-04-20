@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 /**
  * Artifact is The Flash who is able to travel through time.
- * When he is encountered he travels backword in time gets the past max's nation and takes them to the present
+ * When he is encountered he travels backward in time gets the past max's nation and takes them to the present
  * which then doubles the size of max's nation.
  */
 public class TheFlashArtifact extends People  {
