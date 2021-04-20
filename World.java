@@ -1,7 +1,7 @@
 import java.util.*;
 
 /**
- *Creates the simualtion for the world, and populations. For every round played, the arrays of living and dead populations will be updated.
+ *Creates the simulation for the world, and populations. For every round played, the arrays of living and dead populations will be updated.
  * The nations are created and added. One round is played at time, and those nations will follow through with their intended strategies
  *
  * @author Max Schuman, Elizabeth Vicente, Tanishq Iyer, Justin Szaro
@@ -78,7 +78,7 @@ public class World
 
     /**
      * Adds all People of all types per nation and tribe to livingPeople ArrayList
-     * @return livingPeople An ArrayList with all people objects in it.
+     * @return livingPeople: An ArrayList with all people objects in it.
      */
     public ArrayList<People> getWorldCreatedPopulation()
     {
@@ -90,7 +90,8 @@ public class World
     }
 
     /**
-     * Will return an ArrayList of all the survivors that are in worldCreatePeople*/
+     *  an ArrayList of all the survivors that are in worldCreatePeople
+     *  @return survivors: the ArrayList of survivors*/
     public ArrayList<Integer> getWorldSurvivingPeople()
     {
         ArrayList<Integer> survivors = new ArrayList<>();
@@ -106,7 +107,9 @@ public class World
 
     /**
      * Goes through the world created array list, will update the survivingNations HashSet with
-     * those people alive in worldCreatedPerson*/
+     * those people alive in worldCreatedPerson
+     * @return survivingNations:  A hashSet with the surviving nations*/
+
     public Set<String> getSurvivingNations()
     {
         Set<String> survivingNations = new HashSet<>();
