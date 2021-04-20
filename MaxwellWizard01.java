@@ -7,6 +7,8 @@
  */
 
 
+
+
 public class MaxwellWizard01 extends People {
 
     MaxwellWizard01(String nation, String tribe, int lifePoints) {
