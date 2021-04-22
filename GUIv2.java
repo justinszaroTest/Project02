@@ -1,5 +1,3 @@
-package GUI.src;
-
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -16,8 +14,6 @@ public class GUIv2 {
 
 
     public static void main(String[] args) throws InterruptedException {
-        //TODO
-        // Fix string library so it appears when GUI runs
 
 //         String[] nations = new String[]{"Max's Nation", "Justin's Nation",
 //                 "Elizabeth's Nation", "Tanishq's Nation"};
@@ -110,4 +106,35 @@ public class GUIv2 {
 
 
     }
+
+//    DEATH ARTIFACT           encounters          WARRIOR(maxwarrior1)
+//       HEALTH: 70                                     HEALTH: 15
+//       MANA: 100                                      MANA:10
+
+//    DEATH ARTIFACT           encounters          WARRIOR(maxwarrior1)
+//       HEALTH: 70                                     HEALTH: 15
+//       MANA: 100                                      MANA:10
+
+
+//    DEATH ARTIFACT           encounters          WARRIOR(maxwarrior1)
+//       HEALTH: 70                                     HEALTH: 15
+//       MANA: 100                                      MANA:10
+
+//    DEATH ARTIFACT           encounters          WARRIOR(maxwarrior1)
+//       HEALTH: 70                                     HEALTH: 15
+//       MANA: 100                                      MANA:10
+
+
+//    DEATH ARTIFACT           encounters          WARRIOR(maxwarrior1)
+//       HEALTH: 70                                     HEALTH: 15
+//       MANA: 100                                      MANA:10
+
+
+//    DEATH ARTIFACT           encounters          WARRIOR
+//                                             MaxNation / Tribe02
+//                                                  HEALTH: 15
+//                                                  MANA:10
+
+
+//
 }
