@@ -24,6 +24,7 @@ public class World
         dice = new Dice(seed.getTime());
         createWorld();
         worldCreatedPeople.addAll(getWorldCreatedPopulation());
+
     }
 /**
  * War is called from PlayGame. For each round, the arrays of surviving people are reset, if the arrays  are at least
@@ -126,6 +127,8 @@ public class World
      * This is the turn where P1 attacks P2 in the turn
      * Calls their encounter strategies to get the number of lifepoints used, and sets the damage or heath to each
      * player.
+     *
+     *
      * @param person1 first member of the encounter
      * @param person2 second member of the encounter
      */
@@ -133,14 +136,22 @@ public class World
     {
         int person1LifePointsToUse;
         int person2LifePointsToUse;
-        System.out.println("Encounter: " + worldCreatedPeople.get(person1) + worldCreatedPeople.get(person2));
+
+
+        System.out.println("Encounter: " + worldCreatedPeople.get(person1) + " Space " + worldCreatedPeople.get(person2));
+
+
 
         //if lifePointsToUse is negative, then person is either running away in a hostile encounter
         // or person is giving life points to another person from same nation
+
+        //lifepoints
         person1LifePointsToUse = worldCreatedPeople.get(person1).encounterStrategy(worldCreatedPeople.get(person2));
         person2LifePointsToUse = worldCreatedPeople.get(person2).encounterStrategy(worldCreatedPeople.get(person1));
 
         // amount of life points actually used is subject to a pseudo-random encounter
+
+        //mana is damage
         int p1damage =  (int) (dice.roll() * person1LifePointsToUse);
         int  p2damage =  (int) (dice.roll()  * person2LifePointsToUse);
 

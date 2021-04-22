@@ -107,6 +107,37 @@ public class GUIv2 {
 
     }
 
+    //can be found in encounter world 
+    public String getNationName(String name){
+        return name;
+    }
+
+    public String getTribeName(String tribeName){
+        return tribeName;
+    }
+
+    public String getWarriorType(String warriorType){
+        return warriorType;
+    }
+
+    public String getStrategtyEnountered(String encounter){
+        return encounter;
+    }
+
+    public int getLifePoints(int lifePoints){
+        return lifePoints;
+    }
+
+    public int getManaUsed(int manaUsed){
+        return manaUsed;
+    }
+
+
+    //from the war function of World
+    public String getWinner(String winner){
+        return winner;
+    }
+
 //    DEATH ARTIFACT           encounters          WARRIOR(maxwarrior1)
 //       HEALTH: 70                                     HEALTH: 15
 //       MANA: 100                                      MANA:10
