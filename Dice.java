@@ -33,7 +33,9 @@ public class Dice {
      * Rolls a number between 0 and 1.
      * @return a random number between 0 and 1.
      */
-    public float roll()  {
+    public float roll()
+    {
+        System.out.println("");
         return generator.nextFloat();
     }
 
