@@ -11,19 +11,20 @@ import java.util.*;
 public class World
 {
     private final ArrayList<Nation> allNations = new ArrayList<>();
-
     Dice dice;
     ArrayList<People> worldCreatedPeople = new ArrayList<>();
+    private GUIv2 gui;
 
 
 
-    public World()
-    {
+    public World()  {
         // seed for pseudo-random number generator
         Date seed = new Date();
         dice = new Dice(seed.getTime());
         createWorld();
         worldCreatedPeople.addAll(getWorldCreatedPopulation());
+        this.gui = new GUIv2();
+
 
     }
 /**
@@ -36,7 +37,7 @@ public class World
             int numberOfRounds = 4000;
             for(int round = 1; round < numberOfRounds; round++)
             {
-                System.out.println("Round number: " + round);
+                //System.out.println("Round number: " + round);
                 worldSurvivingPeople.clear();
                 worldSurvivingPeople.addAll(getWorldSurvivingPeople());
                 Set<String> survivingNations = new HashSet<>(getSurvivingNations());
@@ -44,17 +45,17 @@ public class World
                     playOneRound(worldSurvivingPeople);
                 else
                 {
-                    System.out.print("Game is over! Winning Nation is: ");
+                    //System.out.print("Game is over! Winning Nation is: ");
                     if (survivingNations.size() == 0)
                     {
-                        System.out.println("All Nations Destroyed.");
+                        //System.out.println("All Nations Destroyed.");
                     }
                     else
                     {
-                        System.out.println(survivingNations);
-                        System.out.println("The survivors are:");
+                        //System.out.println(survivingNations);
+                        //System.out.println("The survivors are:");
                         for (Integer worldSurvivingPerson : worldSurvivingPeople) {
-                            System.out.println(worldCreatedPeople.get(worldSurvivingPerson));
+                            //System.out.println(worldCreatedPeople.get(worldSurvivingPerson));
                         }
                     }
                     break;
@@ -138,7 +139,7 @@ public class World
         int person2LifePointsToUse;
 
 
-        System.out.println("Encounter: " + worldCreatedPeople.get(person1) + " Space " + worldCreatedPeople.get(person2));
+        //System.out.println("Encounter: " + worldCreatedPeople.get(person1) + " Space " + worldCreatedPeople.get(person2));
 
 
 
@@ -199,7 +200,7 @@ public class World
      */
     public void playOneRound(ArrayList<Integer> combatants)
     {
-        System.out.println(combatants.size());
+        //System.out.println(combatants.size());
         int numberOfCombatants;
         Collections.shuffle(combatants);
         numberOfCombatants = combatants.size() - 1;

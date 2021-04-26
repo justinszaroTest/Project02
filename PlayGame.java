@@ -10,8 +10,7 @@ public class PlayGame
     /**
      * Instantiates a new game. Makes a World object and calls its war class.
      */
-    public PlayGame()
-    {
+    public PlayGame()  {
         World earth = new World();
         earth.war();
     }
