@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class GUI {
@@ -52,9 +54,7 @@ public class GUI {
         else if (damage < 0)
             return "\t\t\t\t\t" + person.getName() + " gains " + damage * -1 + " health!";
         return "\t\t\t\t" + person.getName() + " takes no damage!";
-
     }
-
 
     public void printEncounter(People person1, People person2, int person1Damage, int person2Damage) {
         try {
@@ -68,9 +68,25 @@ public class GUI {
         catch (Exception e) {
             System.out.print("Something went wrong!");
         }
-
     }
-    
+
+    public void gameOver(){
+        System.out.print(ANSI_YELLOW + "Game is over! Winning Nation is: " + ANSI_RESET);
+    }
+
+    public void noWinner()  {
+        System.out.println(ANSI_YELLOW + "All Nations Destroyed." + ANSI_RESET);
+        System.out.println(ANSI_YELLOW + "Sorry, you lost!" + ANSI_RESET);
+    }
+
+    public void winner(Set<String> survivingNations, ArrayList<Integer> worldSurvivingPeople, ArrayList<People> worldCreatedPeople) {
+        System.out.println(ANSI_YELLOW + survivingNations);
+        System.out.println("The survivors are:");
+        for (Integer worldSurvivingPerson : worldSurvivingPeople) {
+            System.out.println(ANSI_YELLOW + worldCreatedPeople.get(worldSurvivingPerson) + ANSI_RESET);
+        }
+    }
+
 
 //    DEATH ARTIFACT           encounters          WARRIOR(maxwarrior1)
 //       HEALTH: 70                                       HEALTH: 15
