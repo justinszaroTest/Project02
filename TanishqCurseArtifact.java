@@ -12,9 +12,9 @@ public class TanishqCurseArtifact extends People {
      * @param lifePoints life points for this artifact.
      */
     public TanishqCurseArtifact(String nation, String tribe, int lifePoints) {
-        super(nation, tribe, PeopleType.curse, lifePoints);
+        super(nation, tribe, PeopleType.curse, lifePoints, "The Curse");
 
-        myDescription = "\tCursed Artifact";
+        myDescription = "\tPlayer is infected with the curse!";
         dice = new Dice();
     }
 

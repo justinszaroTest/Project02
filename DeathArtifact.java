@@ -13,8 +13,8 @@ public class DeathArtifact extends People {
      * @param lifePoints the number of lifepoints
      */
     public DeathArtifact(String nation, String tribe, int lifePoints) {
-        super(nation, tribe, PeopleType.reaper, lifePoints);
-        myDescription = "\tDeath";
+        super(nation, tribe, PeopleType.reaper, lifePoints, "Death");
+        myDescription = "\tDeath attempts to reap a soul!";
     }
     /**
      * If the opponents heath is less than ten, Death reaps their souls. If he does this, he loses 1 health point.

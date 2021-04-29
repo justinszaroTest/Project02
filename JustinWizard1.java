@@ -15,7 +15,7 @@ public class JustinWizard1 extends People {
      * @param lifePoints the number of lifepoints
      */
     JustinWizard1(String nation, String tribe, int lifePoints) {
-        super(nation, tribe, PeopleType.wizard, lifePoints);
+        super(nation, tribe, PeopleType.wizard, lifePoints, "Justin's Wizard");
         myDescription = "\tJustin Wizard";
     }
     /**

@@ -13,7 +13,7 @@ public class World
     private final ArrayList<Nation> allNations = new ArrayList<>();
     Dice dice;
     ArrayList<People> worldCreatedPeople = new ArrayList<>();
-    private GUIv2 gui;
+    private GUI gui;
 
 
 
@@ -23,7 +23,7 @@ public class World
         dice = new Dice(seed.getTime());
         createWorld();
         worldCreatedPeople.addAll(getWorldCreatedPopulation());
-        this.gui = new GUIv2();
+        this.gui = new GUI();
 
 
     }
@@ -37,25 +37,26 @@ public class World
             int numberOfRounds = 4000;
             for(int round = 1; round < numberOfRounds; round++)
             {
-                //System.out.println("Round number: " + round);
+                gui.printRoundNumber(round);
                 worldSurvivingPeople.clear();
                 worldSurvivingPeople.addAll(getWorldSurvivingPeople());
                 Set<String> survivingNations = new HashSet<>(getSurvivingNations());
                 if ((worldSurvivingPeople.size() >= 2) && (survivingNations.size() > 1) )
                     playOneRound(worldSurvivingPeople);
                 else
+
                 {
-                    //System.out.print("Game is over! Winning Nation is: ");
+                    System.out.print("Game is over! Winning Nation is: ");
                     if (survivingNations.size() == 0)
                     {
-                        //System.out.println("All Nations Destroyed.");
+                        System.out.println("All Nations Destroyed.");
                     }
                     else
                     {
-                        //System.out.println(survivingNations);
-                        //System.out.println("The survivors are:");
+                        System.out.println(survivingNations);
+                        System.out.println("The survivors are:");
                         for (Integer worldSurvivingPerson : worldSurvivingPeople) {
-                            //System.out.println(worldCreatedPeople.get(worldSurvivingPerson));
+                            System.out.println(worldCreatedPeople.get(worldSurvivingPerson));
                         }
                     }
                     break;
@@ -182,6 +183,7 @@ public class World
 
         // record the damage: positive damage should be subtracted for persons lifePoint
         // negative damage is added to persons life points
+        gui.printEncounter(worldCreatedPeople.get(person1), worldCreatedPeople.get(person2), p1damage, p2damage);
         worldCreatedPeople.get(person1).modifyLifePoints((-p2damage));
         worldCreatedPeople.get(person2).modifyLifePoints((-p1damage ));
 

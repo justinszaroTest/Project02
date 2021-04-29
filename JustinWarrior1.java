@@ -16,7 +16,7 @@ public class JustinWarrior1 extends People
      */
     JustinWarrior1(String nation, String tribe, int lifePoints)
     {
-        super(nation, tribe, PeopleType.warrior, lifePoints);
+        super(nation, tribe, PeopleType.warrior, lifePoints, "Justin's Warrior");
         myDescription = "\tJustin Warrior";
     }
 

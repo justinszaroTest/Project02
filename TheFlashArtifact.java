@@ -20,8 +20,8 @@ public class TheFlashArtifact extends People  {
      */
     public TheFlashArtifact(String nation, String tribe, int lifePoints) {
 
-        super(nation, tribe, PeopleType.TheFlash, lifePoints);
-        myDescription = "\tThe Flash time traveled and brought more soldiers from the past";
+        super(nation, tribe, PeopleType.TheFlash, lifePoints, "The Flash");
+        myDescription = "\tThe Flash time traveled and brought more soldiers from the past!";
     }
 
 

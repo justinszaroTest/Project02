@@ -9,7 +9,7 @@ public class ElizabethWizard extends People {
 
 
     public ElizabethWizard(String nation, String tribe,  int lifePoints) {
-        super(nation, tribe, PeopleType.wizard, lifePoints);
+        super(nation, tribe, PeopleType.wizard, lifePoints, "Elizabeth's Wizard");
         myDescription =  "\tElizabeth Wizard";
     }
      /** If we are from the same nation and I have more life ponts than them, return a negative value

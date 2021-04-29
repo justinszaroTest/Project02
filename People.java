@@ -13,6 +13,7 @@ public abstract class People
 {
     private final String myNation;
     private final String myTribe;
+    private final String myName;
     private final PeopleType me;
     protected String myDescription;
     private int myLifePoints;
@@ -26,15 +27,24 @@ public abstract class People
      * @param person type of created person
      * @param lifePoints total lifepoints of person
      */
-    public People(String nation, String tribe, PeopleType person, int lifePoints)
+    public People(String nation, String tribe, PeopleType person, int lifePoints, String myName)
     {
+
         myNation = nation;
         myTribe = tribe;
+        this.myName = myName;
         me = person;
         myDescription = me.getDescription();
         myLifePoints = lifePoints;
         dead = false;
     }
+
+    public String getMyDescription() {
+        return myDescription;
+    }
+    public String getName() {
+        return myName;
+}
 
     public void setDead()
     {
