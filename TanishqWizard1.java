@@ -13,7 +13,7 @@ public class TanishqWizard1 extends People
      */
     TanishqWizard1(String nation, String tribe, int lifePoints)
     {
-        super(nation, tribe, PeopleType.wizard, lifePoints);
+        super(nation, tribe, PeopleType.wizard, lifePoints, "Tanishq's Wizard");
         myDescription = "\tTanishq Wizard";
     }
 

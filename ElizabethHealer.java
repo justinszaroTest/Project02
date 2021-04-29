@@ -7,7 +7,7 @@
 public class ElizabethHealer extends People {
 
     public ElizabethHealer(String nation, String tribe,  int lifePoints) {
-        super(nation, tribe, PeopleType.cleric, lifePoints);
+        super(nation, tribe, PeopleType.cleric, lifePoints, "Elizabeth's Healer");
         myDescription =  "\tElizabeth Healer";
     }
     /*** If we are from the same nation and I have more life ponts than them, return a negative value

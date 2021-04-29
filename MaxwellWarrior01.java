@@ -19,7 +19,7 @@ public class MaxwellWarrior01 extends People {
      * @param lifePoints
      */
     public MaxwellWarrior01(String nation, String tribe,  int lifePoints) {
-        super(nation, tribe, PeopleType.warrior, lifePoints);
+        super(nation, tribe, PeopleType.warrior, lifePoints, "Max's Warrior");
         myDescription =  "\tMax's Warrior 01";
     }
 

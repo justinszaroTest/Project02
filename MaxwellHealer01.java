@@ -17,7 +17,7 @@ public class MaxwellHealer01 extends People {
      * @param lifePoints
      */
     MaxwellHealer01(String nation, String tribe, int lifePoints) {
-        super(nation, tribe, PeopleType.cleric, lifePoints);
+        super(nation, tribe, PeopleType.cleric, lifePoints, "Max's Healer");
         myDescription = "\tMax's Healer 01";
     }
 

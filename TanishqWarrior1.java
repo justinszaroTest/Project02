@@ -12,7 +12,7 @@ public class TanishqWarrior1 extends People
      */
     TanishqWarrior1(String nation, String tribe, int lifePoints)
     {
-        super(nation, tribe, PeopleType.warrior, lifePoints);
+        super(nation, tribe, PeopleType.warrior, lifePoints, "Tanishq's Warrior");
         myDescription = "\tTanishq Warrior";
     }
 

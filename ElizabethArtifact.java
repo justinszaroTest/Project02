@@ -6,8 +6,8 @@
  */
 public class ElizabethArtifact extends People {
     public ElizabethArtifact(String nation, String tribe, int lifePoints) {
-        super(nation, tribe, PeopleType.angel, lifePoints);
-        myDescription = "\tAngel Special Character";
+        super(nation, tribe, PeopleType.angel, lifePoints, "Angel");
+        myDescription = "\tAngel Heals a player!";
         turnsAvailable = lifePoints;
     }
 

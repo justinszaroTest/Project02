@@ -17,7 +17,7 @@ public class MaxwellWizard01 extends People {
      * @param lifePoints
      */
     MaxwellWizard01(String nation, String tribe, int lifePoints) {
-        super(nation, tribe, PeopleType.wizard, lifePoints);
+        super(nation, tribe, PeopleType.wizard, lifePoints, "Max's Wizard");
         myDescription = "\tMax's Wizard 01";
     }
 

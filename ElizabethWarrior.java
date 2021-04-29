@@ -8,7 +8,7 @@ public class ElizabethWarrior extends People {
 
 
     public ElizabethWarrior(String nation, String tribe,  int lifePoints) {
-        super(nation, tribe, PeopleType.warrior, lifePoints);
+        super(nation, tribe, PeopleType.warrior, lifePoints, "Elizabeth's Warrior");
         myDescription =  "\tElizabeth Warrior";
     }
 
