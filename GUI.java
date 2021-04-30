@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -71,6 +73,7 @@ public class GUI {
         return "\t\t\t\t" + person.getName() + " takes no damage!";
     }
 
+
     /**
      * Prints an encounter.
      * @param person1 the first person.
@@ -78,6 +81,7 @@ public class GUI {
      * @param person1Damage damage dealt by first person.
      * @param person2Damage damage dealt by second person.
      */
+
     public void printEncounter(People person1, People person2, int person1Damage, int person2Damage) {
         try {
             System.out.println(ANSI_RED + "\t\t\t\t\t" + person1.getName() + ANSI_BLUE + "\t\t\t\t\t\t" + person2.getName() + ANSI_RESET);
@@ -89,6 +93,23 @@ public class GUI {
         }
         catch (Exception e) {
             System.out.print("Something went wrong!");
+        }
+    }
+
+    public void gameOver(){
+        System.out.print(ANSI_YELLOW + "Game is over! Winning Nation is: " + ANSI_RESET);
+    }
+
+    public void noWinner()  {
+        System.out.println(ANSI_YELLOW + "All Nations Destroyed." + ANSI_RESET);
+        System.out.println(ANSI_YELLOW + "Sorry, you lost!" + ANSI_RESET);
+    }
+
+    public void winner(Set<String> survivingNations, ArrayList<Integer> worldSurvivingPeople, ArrayList<People> worldCreatedPeople) {
+        System.out.println(ANSI_YELLOW + survivingNations);
+        System.out.println("The survivors are:");
+        for (Integer worldSurvivingPerson : worldSurvivingPeople) {
+            System.out.println(ANSI_YELLOW + worldCreatedPeople.get(worldSurvivingPerson) + ANSI_RESET);
         }
     }
 
