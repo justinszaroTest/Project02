@@ -5,6 +5,9 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Class for printing the GUI in the terminal.
+ */
 public class GUI {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
@@ -17,6 +20,10 @@ public class GUI {
     public static final String ANSI_WHITE = "\u001B[37m";
     Scanner scanner = null;
 
+    /**
+     * Constructs a GUI class.
+     * Prints out the start screen.
+     */
     public GUI()  {
         Dice die = new Dice();
         try {
@@ -42,10 +49,20 @@ public class GUI {
         }
     }
 
+    /**
+     * Prints the number of the current round.
+     * @param roundNumber the number of the current round.
+     */
     public void printRoundNumber(int roundNumber) {
         System.out.println("\n\n\n" + ANSI_GREEN + "\t\t\t\t\t\t\t\t\t\t\t ROUND" + roundNumber + ANSI_RESET);
     }
 
+    /**
+     * Prints result of an encounter.
+     * @param person the Person.
+     * @param damage the damage or health afflicted on the person.
+     * @return a String if no damage.
+     */
     public String printStatus(People person, int damage) {
         if (person.getNation().equals("Artifact's Nation"))
             return "\t\t\t\t\t"  + person.getMyDescription();
@@ -55,6 +72,15 @@ public class GUI {
             return "\t\t\t\t\t" + person.getName() + " gains " + damage * -1 + " health!";
         return "\t\t\t\t" + person.getName() + " takes no damage!";
     }
+
+
+    /**
+     * Prints an encounter.
+     * @param person1 the first person.
+     * @param person2 the second person
+     * @param person1Damage damage dealt by first person.
+     * @param person2Damage damage dealt by second person.
+     */
 
     public void printEncounter(People person1, People person2, int person1Damage, int person2Damage) {
         try {
@@ -86,7 +112,6 @@ public class GUI {
             System.out.println(ANSI_YELLOW + worldCreatedPeople.get(worldSurvivingPerson) + ANSI_RESET);
         }
     }
-
 
 //    DEATH ARTIFACT           encounters          WARRIOR(maxwarrior1)
 //       HEALTH: 70                                       HEALTH: 15
