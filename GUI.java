@@ -3,8 +3,13 @@ import java.io.FileReader;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Class for printing the GUI in the terminal.
+
+ /**
+  * Class for printing the GUI in the terminal.
+ *
+ * @author Max Schuman, Elizabeth Vicente, Tanishq Iyer, Justin Szaro
+ * @version 3.0
+ * @since 2021-04-11
  */
 public class GUI {
     public static final String ANSI_RESET = "\u001B[0m";
@@ -110,6 +115,10 @@ public class GUI {
         }
     }
 
+     /**
+      * Prints whether or not the users chosen nation won or lost.
+      * @param survivingNations A set of the surviving nations
+      */
     public void gameOver(Set<String> survivingNations){
         if (survivingNations.equals(Collections.singleton(nationName))) {
             System.out.print(ANSI_YELLOW + "\t\t\t\t\tCONGRATS!!! YOU HAVE WON WARRING NATIONS" + ANSI_RESET);
@@ -120,11 +129,20 @@ public class GUI {
 
     }
 
+     /**
+      * Is called if all nations are destroyed  and no one wins.
+      */
     public void noWinner()  {
         System.out.println(ANSI_YELLOW + "All Nations Destroyed." + ANSI_RESET);
         System.out.println(ANSI_YELLOW + "Sorry, you lost!" + ANSI_RESET);
     }
 
+     /**
+      * Prints out the winning nation and its survivors.
+      * @param survivingNations A set of the surviving nations
+      * @param worldSurvivingPeople An arraylist of the surviving people.
+      * @param worldCreatedPeople An Arraylist of all the people.
+      */
     public void winner(Set<String> survivingNations, ArrayList<Integer> worldSurvivingPeople, ArrayList<People> worldCreatedPeople) {
         System.out.println(ANSI_YELLOW + "The winning nation is: " + survivingNations);
         System.out.println("The survivors are:");
