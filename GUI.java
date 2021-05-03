@@ -1,8 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -19,6 +17,7 @@ public class GUI {
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
     Scanner scanner = null;
+    String nationName;
 
     /**
      * Constructs a GUI class.
@@ -26,6 +25,10 @@ public class GUI {
      */
     public GUI()  {
         Dice die = new Dice();
+        String Max = "Max's Nation!";
+        String Justin = "Justin's Nation!";
+        String Elizabeth = "Elizabeth's Nation!";
+        String Tanishq = "Tanishq's Nation!";
         try {
             scanner = new Scanner(new BufferedReader(new FileReader("openingScreen.txt")));
             while (scanner.hasNext()) {
@@ -38,11 +41,22 @@ public class GUI {
             TimeUnit.MILLISECONDS.sleep(250);
             System.out.println("\t\t\t\t\t\t\t\t\t\t\t IT IS NOW TIME TO PICK YOUR NATION!");
             TimeUnit.MILLISECONDS.sleep(250);
+
+
+            Scanner myObj = new Scanner(System.in);  // Create a Scanner object
             System.out.println("\t\t\t\t\t\t\t\t\t\t\t PICK ONE OF THE NATIONS BELOW TO START THE GAME");
-            System.out.println(ANSI_GREEN + "\n\n\n\t\t\t\t\t\t\t\t\t\t\t Max's Nation" + ANSI_RESET);
-            System.out.println(ANSI_BLUE + "\t\t\t\t\t\t\t\t\t\t\t Justin's Nation" + ANSI_RESET);
-            System.out.println(ANSI_PURPLE + "\t\t\t\t\t\t\t\t\t\t\t Elizabeth's Nation" + ANSI_RESET);
-            System.out.println(ANSI_CYAN + "\t\t\t\t\t\t\t\t\t\t\t Tanishq's Nation" + ANSI_RESET);
+
+
+
+
+            System.out.println(ANSI_GREEN + "\n\n\n\t\t\t\t\t\t\t\t\t\t\t" + Max + ANSI_RESET);
+            System.out.println(ANSI_BLUE + "\t\t\t\t\t\t\t\t\t\t\t" + Justin + ANSI_RESET);
+            System.out.println(ANSI_PURPLE + "\t\t\t\t\t\t\t\t\t\t\t" + Elizabeth + ANSI_RESET);
+            System.out.println(ANSI_CYAN + "\t\t\t\t\t\t\t\t\t\t\t" + Tanishq + ANSI_RESET);
+
+            nationName = myObj.nextLine();  // Read user input
+            System.out.println("You selected: " + nationName);  // Output user input
+
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -89,15 +103,21 @@ public class GUI {
             System.out.println(ANSI_RED + "\t\t\t\t\t" + person1.getTribe() + ANSI_BLUE + "\t\t\t\t\t\t\t\t\t" + person2.getTribe() + ANSI_RESET);
             System.out.println(ANSI_RED + "\t\t\t\t\t" + "Lifepoints: " + person1.getLifePoints() + ANSI_BLUE + "\t\t\t\t\t\t\t" + "Lifepoints: " + person2.getLifePoints() + ANSI_RESET);
             System.out.println(ANSI_RED + printStatus(person1, person1Damage) + ANSI_BLUE + printStatus(person2, person2Damage) + ANSI_RESET);
-            //TimeUnit.MILLISECONDS.sleep(3000);
+            TimeUnit.MILLISECONDS.sleep(1000);
         }
         catch (Exception e) {
             System.out.print("Something went wrong!");
         }
     }
 
-    public void gameOver(){
-        System.out.print(ANSI_YELLOW + "Game is over! Winning Nation is: " + ANSI_RESET);
+    public void gameOver(Set<String> survivingNations){
+        if (survivingNations.equals(Collections.singleton(nationName))) {
+            System.out.print(ANSI_YELLOW + "\t\t\t\t\tCONGRATS!!! YOU HAVE WON WARRING NATIONS" + ANSI_RESET);
+        }
+        else {
+            System.out.println("\t\t\t\t\tThats ashame, your nation lost..... Better luck next game!!!");
+        }
+
     }
 
     public void noWinner()  {
@@ -113,34 +133,5 @@ public class GUI {
         }
     }
 
-//    DEATH ARTIFACT           encounters          WARRIOR(maxwarrior1)
-//       HEALTH: 70                                       HEALTH: 15
-//       MANA: 100                                      MANA:10
 
-//    DEATH ARTIFACT           encounters          WARRIOR(maxwarrior1)
-//       HEALTH: 70                                     HEALTH: 15
-//       MANA: 100                                      MANA:10
-
-
-//    DEATH ARTIFACT           encounters          WARRIOR(maxwarrior1)
-//       HEALTH: 70                                     HEALTH: 15
-//       MANA: 100                                      MANA:10
-
-//    DEATH ARTIFACT           encounters          WARRIOR(maxwarrior1)
-//       HEALTH: 70                                     HEALTH: 15
-//       MANA: 100                                      MANA:10
-
-
-//    DEATH ARTIFACT           encounters          WARRIOR(maxwarrior1)
-//       HEALTH: 70                                     HEALTH: 15
-//       MANA: 100                                      MANA:10
-
-
-//    DEATH ARTIFACT           encounters          WARRIOR
-//                                             MaxNation / Tribe02
-//                                                  HEALTH: 15
-//                                                  MANA:10
-
-
-//
 }

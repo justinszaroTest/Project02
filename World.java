@@ -41,7 +41,8 @@ public class World
                     playOneRound(worldSurvivingPeople);
                 else
                 {
-                    gui.gameOver();
+
+                    gui.gameOver(survivingNations);
                     if (survivingNations.size() == 0)
                         gui.noWinner();
                     else
