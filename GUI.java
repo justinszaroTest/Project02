@@ -126,7 +126,7 @@ public class GUI {
     }
 
     public void winner(Set<String> survivingNations, ArrayList<Integer> worldSurvivingPeople, ArrayList<People> worldCreatedPeople) {
-        System.out.println(ANSI_YELLOW + "The winning nation is: " + survivingNations);
+        System.out.println(ANSI_YELLOW + survivingNations);
         System.out.println("The survivors are:");
         for (Integer worldSurvivingPerson : worldSurvivingPeople) {
             System.out.println(ANSI_YELLOW + worldCreatedPeople.get(worldSurvivingPerson) + ANSI_RESET);
